@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>template threejs</title>
+    <style>
+        body { margin: 0; }
+        canvas { width: 100%; height: 100% }
+    </style>
+</head>
+<body>
+<script src="build/three.min.js"></script>
+<script src='js/THREEx.KeyboardState.js'></script>
+<script>
+    // Create scene and camera
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+    //var camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, - 100, 500 );
+
+    var keyboard = new THREEx.KeyboardState();
+
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+
+    var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+    var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    var cube = new THREE.Mesh( geometry, material );
+    scene.add( cube );
+
+    //camera.lookAt(cube);
+    camera.position.z = 5;
+    //camera.position.y = 0;
+
+    // used to move the cube around on the screen
+    var move = function movement(){
+
+        var m = 0.1;
+        if( keyboard.pressed("W") ) {
+            cube.translateY(m);
+        }
+
+        if( keyboard.pressed("S") ) {
+            cube.translateY(-m);
+        }
+
+        if( keyboard.pressed("D") ) {
+            cube.translateX(m);
+        }
+
+        if( keyboard.pressed("A") ) {
+            cube.translateX(-m);
+        }
+    };
+
+    var render = function () {
+        requestAnimationFrame( render );
+
+        renderer.render(scene, camera);
+        move();
+    };
+    render();
+
+</script>
+</body>
+</html>
