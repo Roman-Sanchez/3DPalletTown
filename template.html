@@ -16,6 +16,15 @@
     //var camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, - 100, 500 );
 
     var keyboard = new THREEx.KeyboardState();
+    var clock = new THREE.Clock();
+
+    var ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
+
+    var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+    directionalLight.position.set( 0, 1, 0 );
+    directionalLight.castShadow = true;
+    scene.add( directionalLight );
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -24,38 +33,69 @@
     var geometry = new THREE.BoxGeometry( 1, 1, 1 );
     var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
     var cube = new THREE.Mesh( geometry, material );
+    cube.castShadow = true;
+    cube.receiveShadow = true;
     scene.add( cube );
+
+    var geometry2 = new THREE.PlaneGeometry(100, 100);
+    var material2 = new THREE.MeshBasicMaterial({color: 0x1100FF, side: THREE.DoubleSide});
+    var plane = new THREE.Mesh(geometry2, material2);
+    plane.receiveShadow = true;
+    plane.position.y = -0.5;
+
+    // Rotate the plane to lay flat along the ground
+    plane.rotateX(90 * Math.PI / 180 );
+
+    scene.add(plane);
 
     //camera.lookAt(cube);
     camera.position.z = 5;
-    //camera.position.y = 0;
+    camera.position.y = 2;
 
     // used to move the cube around on the screen
     var move = function movement(){
 
-        var m = 0.1;
+        var delta = clock.getDelta();
+        var rotateAngle = Math.PI / 2 * delta;
+        var speed = 0.1;
+
         if( keyboard.pressed("W") ) {
-            cube.translateY(m);
+            cube.translateZ(-speed);
         }
 
         if( keyboard.pressed("S") ) {
-            cube.translateY(-m);
+            cube.translateZ(speed);
         }
 
-        if( keyboard.pressed("D") ) {
-            cube.translateX(m);
-        }
+        // Create rotations to rotate the cube
 
-        if( keyboard.pressed("A") ) {
-            cube.translateX(-m);
-        }
+        if ( keyboard.pressed("A") )
+            cube.rotateOnAxis( new THREE.Vector3(0,1,0), rotateAngle);
+        if ( keyboard.pressed("D") )
+            cube.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
+        cameraMovement(cube);
     };
+
+    function cameraMovement(cube){
+
+        var relativeCameraOffset = new THREE.Vector3(0, 3, 5);
+
+        var cameraOffset = relativeCameraOffset.applyMatrix4(cube.matrixWorld);
+
+        camera.position.x = cameraOffset.x;
+        camera.position.y = cameraOffset.y;
+        camera.position.z = cameraOffset.z;
+
+        camera.lookAt(cube.position);
+    }
 
     var render = function () {
         requestAnimationFrame( render );
-
-        renderer.render(scene, camera);
         move();
+
+        renderer.shadowMapEnabled = true;
+        renderer.render(scene, camera);
+
     };
     render();
 
