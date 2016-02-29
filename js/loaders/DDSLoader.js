@@ -211,12 +211,12 @@ THREE.DDSLoader.parse = function ( buffer, loadMipmaps ) {
 	var caps2 = header[ off_caps2 ];
 	dds.isCubemap = caps2 & DDSCAPS2_CUBEMAP ? true : false;
 	if ( dds.isCubemap && (
-		! ( caps2 & DDSCAPS2_CUBEMAP_POSITIVEX ) ||
-		! ( caps2 & DDSCAPS2_CUBEMAP_NEGATIVEX ) ||
-		! ( caps2 & DDSCAPS2_CUBEMAP_POSITIVEY ) ||
-		! ( caps2 & DDSCAPS2_CUBEMAP_NEGATIVEY ) ||
-		! ( caps2 & DDSCAPS2_CUBEMAP_POSITIVEZ ) ||
-		! ( caps2 & DDSCAPS2_CUBEMAP_NEGATIVEZ )
+			! ( caps2 & DDSCAPS2_CUBEMAP_POSITIVEX ) ||
+			! ( caps2 & DDSCAPS2_CUBEMAP_NEGATIVEX ) ||
+			! ( caps2 & DDSCAPS2_CUBEMAP_POSITIVEY ) ||
+			! ( caps2 & DDSCAPS2_CUBEMAP_NEGATIVEY ) ||
+			! ( caps2 & DDSCAPS2_CUBEMAP_POSITIVEZ ) ||
+			! ( caps2 & DDSCAPS2_CUBEMAP_NEGATIVEZ )
 		) ) {
 
 		console.error( 'THREE.DDSLoader.parse: Incomplete cubemap faces' );
