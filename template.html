@@ -9,6 +9,9 @@
 <body>
 <script src="build/three.min.js"></script>
 <script src='js/THREEx.KeyboardState.js'></script>
+<script src="js/loaders/DDSLoader.js"></script>
+<script src="js/loaders/MTLLoader.js"></script>
+<script src="js/loaders/OBJLoader.js"></script>
 <script>
     // Create scene and camera
     var scene = new THREE.Scene();
@@ -33,6 +36,7 @@
     var geometry = new THREE.BoxGeometry( 1, 1, 1 );
     var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
     var cube = new THREE.Mesh( geometry, material );
+    cube.position.y = 0.5;
     cube.castShadow = true;
     cube.receiveShadow = true;
     scene.add( cube );
@@ -41,7 +45,7 @@
     var material2 = new THREE.MeshBasicMaterial({color: 0x1100FF, side: THREE.DoubleSide});
     var plane = new THREE.Mesh(geometry2, material2);
     plane.receiveShadow = true;
-    plane.position.y = -0.5;
+    plane.position.y = 0;
 
     // Rotate the plane to lay flat along the ground
     plane.rotateX(90 * Math.PI / 180 );
@@ -51,6 +55,42 @@
     //camera.lookAt(cube);
     camera.position.z = 5;
     camera.position.y = 2;
+
+    var onProgress = function ( xhr ) {
+        if ( xhr.lengthComputable ) {
+            var percentComplete = xhr.loaded / xhr.total * 100;
+            console.log( Math.round(percentComplete, 2) + '% downloaded' );
+        }
+    };
+
+    function loadBulba() {
+        // load bulbasaur
+        var bulba = new THREE.Object3D();
+        var onError = function (xhr) {
+        };
+        THREE.Loader.Handlers.add(/\.dds$/i, new THREE.DDSLoader());
+        var mtlLoader = new THREE.MTLLoader();
+        mtlLoader.setBaseUrl('objects/Bulbasaur/');
+        mtlLoader.setPath('objects/Bulbasaur/');
+        mtlLoader.load('BR_Bulbasaur.mtl', function (materials) {
+            materials.preload();
+            var objLoader = new THREE.OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath('objects/Bulbasaur/');
+            objLoader.load('Bulbasaur.obj', function (object) {
+                object.position.set(0, 0, 2);
+                object.scale.set(0.1, 0.1, 0.1);
+                bulba.add(object);
+                scene.add(object);
+            }, onProgress, onError);
+        });
+        return bulba;
+    }
+
+    function loadTree(){
+        var leafMesh = new THREE.ImageUtils.loadTexture('objects/tree/');
+
+    }
 
     // used to move the cube around on the screen
     var move = function movement(){
@@ -78,14 +118,14 @@
 
     function cameraMovement(cube){
 
+        // 5 units behind and 3 units above the object
         var relativeCameraOffset = new THREE.Vector3(0, 3, 5);
 
         var cameraOffset = relativeCameraOffset.applyMatrix4(cube.matrixWorld);
 
-        camera.position.x = cameraOffset.x;
-        camera.position.y = cameraOffset.y;
-        camera.position.z = cameraOffset.z;
+        camera.position.set(cameraOffset.x, cameraOffset.y, cameraOffset.z);
 
+        // face the object
         camera.lookAt(cube.position);
     }
 
@@ -93,10 +133,12 @@
         requestAnimationFrame( render );
         move();
 
-        renderer.shadowMapEnabled = true;
+        renderer.shadowMap.enabled = true;
         renderer.render(scene, camera);
 
     };
+    var bulba = loadBulba();
+    console.log(bulba);
     render();
 
 </script>
