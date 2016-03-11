@@ -37,7 +37,7 @@
 
 			// load the tie fighter model from clara.io      
 	      	var loader = new THREE.ObjectLoader();
-	      	loader.load("http://localhost:8888/tie.json", 
+	      	loader.load("tie.json",
 	          	function ( obj ) {
 	          		objTieBig = obj;
 	              	scene.add( obj );
@@ -46,7 +46,7 @@
 
 			// load the tie fighter model from clara.io      
 	      	loader = new THREE.ObjectLoader();
-	      	loader.load("http://localhost:8888/tie2.json", 
+	      	loader.load("tie2.json",
 	          	function ( obj ) {
 	          		obj.position.y = 15;
 	          		objTie = obj;
