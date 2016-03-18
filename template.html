@@ -24,6 +24,8 @@
     var ambientLight = new THREE.AmbientLight(0x404040);
     scene.add(ambientLight);
 
+    var box3Array = [];
+
     var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
     directionalLight.position.set( 0, 1, 0 );
     directionalLight.castShadow = true;
@@ -79,7 +81,30 @@
 
     //camera.lookAt(cube);
     camera.position.z = 5;
-    camera.position.y = 2;
+    camera.position.y = 1;
+
+    // Skybox
+    var axes = new THREE.AxisHelper(100);
+    scene.add(axes);
+
+    var urls = ["objects/images/right.png", "objects/images/left.png", "objects/images/top.png",
+        "objects/images/bottom.png","objects/images/front.png","objects/images/back.png"];
+    var skyGeo = new THREE.CubeGeometry(1000, 600, 1000);
+    var materialArray = [];
+    for (var i = 0; i < 6; i++){
+        materialArray.push(new THREE.MeshBasicMaterial(
+                {
+                    map: THREE.ImageUtils.loadTexture(urls[i]),
+                    side: THREE.BackSide
+                }
+        ));
+    }
+    var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
+    var skyBox = new THREE.Mesh(skyGeo, skyMaterial);
+    skyBox.position.y = 49.5;
+    scene.add(skyBox);
+
+
 
     var onProgress = function ( xhr ) {
         if ( xhr.lengthComputable ) {
@@ -104,7 +129,7 @@
             objLoader.setPath('objects/Bulbasaur/');
             objLoader.load('Bulbasaur.obj', function (object) {
                 object.position.set(0, 0, 2);
-                object.scale.set(0.1, 0.1, 0.1);
+                object.scale.set(0.2, 0.2, 0.2);
                 bulba.add(object);
                 scene.add(bulba);
             }, onProgress, onError);
@@ -144,7 +169,7 @@
     function cameraMovement(cube){
 
         // 5 units behind and 3 units above the object
-        var relativeCameraOffset = new THREE.Vector3(0, 3, 5);
+        var relativeCameraOffset = new THREE.Vector3(0, 2, 10);
 
         var cameraOffset = relativeCameraOffset.applyMatrix4(cube.matrixWorld);
 
@@ -157,12 +182,39 @@
     var render = function () {
         requestAnimationFrame( render );
         move();
+        /**for (var i = 0; i < box3Array.length; i++){
+            if(bulbaBox.intersectsBox(box3Array[i]))
+            {
+                console.log("Collision");
+            }
+        }**/
         //bulba.rotation.x += 0.1;
         renderer.shadowMap.enabled = true;
         renderer.render(scene, camera);
 
     };
+
+
     var bulba = loadBulba();
+    var bulbaBox = getBox3(bulba);
+    getBox3(cube);
+
+    function getBox3(object){
+        var box = new THREE.Box3();
+        box.setFromObject(object);
+        box3Array.push(box);
+        scene.add(box);
+    };
+
+    function collide(object){
+        for (var i = 0; i < box3Array.length; i++){
+           if(object.intersectsBox(box3Array[i]))
+           {
+               console.log("Collision");
+           }
+        }
+    };
+
     console.log(bulba);
     render();
 
