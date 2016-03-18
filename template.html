@@ -7,7 +7,7 @@
     </style>
 </head>
 <body>
-<script src="build/three.min.js"></script>
+<script src="three.js-master/build/three.min.js"></script>
 <script src='js/THREEx.KeyboardState.js'></script>
 <script src="js/loaders/DDSLoader.js"></script>
 <script src="js/loaders/MTLLoader.js"></script>
@@ -106,7 +106,7 @@
                 object.position.set(0, 0, 2);
                 object.scale.set(0.1, 0.1, 0.1);
                 bulba.add(object);
-                scene.add(object);
+                scene.add(bulba);
             }, onProgress, onError);
         });
         return bulba;
@@ -125,20 +125,20 @@
         var speed = 0.1;
 
         if( keyboard.pressed("W") ) {
-            cube.translateZ(-speed);
+            bulba.translateZ(-speed);
         }
 
         if( keyboard.pressed("S") ) {
-            cube.translateZ(speed);
+            bulba.translateZ(speed);
         }
 
         // Create rotations to rotate the cube
 
         if ( keyboard.pressed("A") )
-            cube.rotateOnAxis( new THREE.Vector3(0,1,0), rotateAngle);
+            bulba.rotateOnAxis( new THREE.Vector3(0,1,0), rotateAngle);
         if ( keyboard.pressed("D") )
-            cube.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
-        cameraMovement(cube);
+            bulba.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
+        cameraMovement(bulba);
     };
 
     function cameraMovement(cube){
@@ -157,7 +157,7 @@
     var render = function () {
         requestAnimationFrame( render );
         move();
-        bulba.rotation.x += 0.1;
+        //bulba.rotation.x += 0.1;
         renderer.shadowMap.enabled = true;
         renderer.render(scene, camera);
 
