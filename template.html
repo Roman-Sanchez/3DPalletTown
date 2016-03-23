@@ -25,6 +25,9 @@
     var ambientLight = new THREE.AmbientLight(0x404040);
     scene.add(ambientLight);
 
+    // Fog
+    //scene.fog = new THREE.FogExp2( 0xefd1b5, 0.002 );
+
     var box3Array = [];
 
     var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
@@ -106,6 +109,14 @@
     scene.add(skyBox);
 
 
+    /**
+     * URLs for the objects
+     *
+     **/
+    var houseObjURL = "objects/House/";
+    var houseMTLURL = "objects/House/";
+    var houseName = "House.obj";
+    var houseMTL = "House.mtl";
 
     var onProgress = function ( xhr ) {
         if ( xhr.lengthComputable ) {
@@ -162,6 +173,75 @@
         return bulba;
     }
 
+    function loadLab() {
+        // load bulbasaur
+        var object3D = new THREE.Object3D();
+        var onError = function (xhr) {
+        };
+        THREE.Loader.Handlers.add(/\.dds$/i, new THREE.DDSLoader());
+        var mtlLoader = new THREE.MTLLoader();
+        mtlLoader.setBaseUrl('objects/ElmPokemonLab/');
+        mtlLoader.setPath('objects/ElmPokemonLab/');
+        mtlLoader.load('ElmPokemonLab.mtl', function (materials) {
+            materials.preload();
+            var objLoader = new THREE.OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath('objects/ElmPokemonLab/');
+            objLoader.load('Elm\ Pokemon\ Lab.obj', function (object) {
+                object.scale.set(0.2, 0.2, 0.2);
+                object.position.set(100, -1, -100);
+                object3D.add(object);
+
+            }, onProgress, onError);
+        });
+        return object3D;
+    }
+
+    /*
+    * Create an obj and map its textures using the mtl file
+    *
+    * @objBaseURL: file path to where the .obj is located
+    * @mtlBaseURL: file path to where the .mtl is located
+    * @objName:    name of the obj file
+    * @mtlName:    name of the mtl file
+    * @xpos:       x position
+    * @ypos:       y position
+    * @zpos:       z position
+    * */
+    function loadOBJ(objBaseURL, mtlBaseURL, objName, mtlName, xpos, ypos, zpos) {
+
+        // set the position to a default of zero if they are not passed in
+        if (xpos == null)
+            xpos = 0;
+
+        if (ypos == null)
+            ypos = 0;
+
+        if (zpos == null)
+            zpos = 0;
+
+        var object3D = new THREE.Object3D();
+        var onError = function (xhr) {
+        };
+        THREE.Loader.Handlers.add(/\.dds$/i, new THREE.DDSLoader());
+        var mtlLoader = new THREE.MTLLoader();
+        mtlLoader.setBaseUrl(mtlBaseURL);
+        mtlLoader.setPath(mtlBaseURL);
+        mtlLoader.load(mtlName, function (materials) {
+            materials.preload();
+            var objLoader = new THREE.OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath(objBaseURL);
+            objLoader.load(objName, function (object) {
+                object.scale.set(0.2, 0.2, 0.2);
+                object.position.set(xpos, ypos, zpos);
+                object3D.add(object);
+
+            }, onProgress, onError);
+        });
+        return object3D;
+    }
+
     function loadTree(){
         var leafMesh = new THREE.ImageUtils.loadTexture('objects/tree/');
 
@@ -172,7 +252,7 @@
 
         var delta = clock.getDelta();
         var rotateAngle = Math.PI / 2 * delta;
-        var speed = 0.1;
+        var speed = 0.5;
 
         if( keyboard.pressed("W") ) {
             bulba.translateZ(-speed);
@@ -194,7 +274,7 @@
     function cameraMovement(cube){
 
         // 5 units behind and 3 units above the object
-        var relativeCameraOffset = new THREE.Vector3(0, 2, 10);
+        var relativeCameraOffset = new THREE.Vector3(0, 5, 10);
 
         var cameraOffset = relativeCameraOffset.applyMatrix4(cube.matrixWorld);
 
@@ -219,12 +299,6 @@
 
     };
 
-    var bulba2 = loadNewBulba();
-    scene.add(bulba2);
-    var bulba = loadBulba();
-    var bulbaBox = getBox3(bulba);
-    getBox3(cube);
-
     function getBox3(object){
         var box = new THREE.Box3();
         box.setFromObject(object);
@@ -240,6 +314,17 @@
            }
         }
     };
+
+    var house = loadOBJ(houseObjURL, houseMTLURL, houseName, houseMTL, -100, -0.199, -100);
+    scene.add(house);
+    var house2;
+    var lab = loadLab();
+    scene.add(lab);
+    var bulba2 = loadNewBulba();
+    scene.add(bulba2);
+    var bulba = loadBulba();
+    var bulbaBox = getBox3(bulba);
+    getBox3(cube);
 
     console.log(bulba);
     render();

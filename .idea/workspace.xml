@@ -1,34 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b16e715-a1bc-4210-8770-d2db783b4dc4" name="Default" comment="Got a different bulba to get part of the textures to appear">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Textures/1D2934AD_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Textures/207E44AB_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Textures/219F32F4_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Textures/39E9C0F0_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Textures/407EF3E4_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Textures/5C971C70_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Textures/76A27540_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Textures/77A6677A_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Textures/7C41FEAF_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Textures/ED67B58_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Textures/1D2934AD_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Textures/207E44AB_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Textures/219F32F4_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Textures/39E9C0F0_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Textures/407EF3E4_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Textures/5C971C70_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Textures/76A27540_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Textures/77A6677A_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Textures/7C41FEAF_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Textures/ED67B58_c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Bulbasaur.mtl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/BulbasaurNew/Bulbasaur.obj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Bulba.mtl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/TestBulba/Bulba.obj" />
+    <list default="true" id="9b16e715-a1bc-4210-8770-d2db783b4dc4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/ElmPokemonLab/h_kage.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/ElmPokemonLab/wk_labo_a.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/ElmPokemonLab/wk_labo_b.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/ElmPokemonLab/wk_labo_c.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House/h_kage.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House/h_mado.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House/r30_h01a.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House/wk_h01_a.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/ElmPokemonLab/Elm Pokemon Lab.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/ElmPokemonLab/ElmPokemonLab.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House/House.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House/House.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loaders/OBJMTLLoader.js" afterPath="$PROJECT_DIR$/js/loaders/OBJMTLLoader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Bulbasaur.obj" afterPath="$PROJECT_DIR$/objects/Bulbasaur/Bulbasaur.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template.html" afterPath="$PROJECT_DIR$/template.html" />
     </list>
     <ignored path="CS312.iws" />
@@ -53,8 +39,8 @@
       <file leaf-file-name="template.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76551723">
-              <caret line="161" column="21" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
+            <state vertical-scroll-proportion="1.4568965">
+              <caret line="228" column="36" selection-start-line="228" selection-start-column="36" selection-end-line="228" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -106,6 +92,8 @@
         <option value="$PROJECT_DIR$/objects/BulbasaurNew/Bulbasaur.obj" />
         <option value="$PROJECT_DIR$/objects/Bulbasaur/Bulbasaur.obj" />
         <option value="$PROJECT_DIR$/objects/TestBulba/Bulba.mtl" />
+        <option value="$PROJECT_DIR$/objects/OakLab/Lab.obj" />
+        <option value="$PROJECT_DIR$/objects/OakLab/Lab.mtl" />
         <option value="$PROJECT_DIR$/template.html" />
       </list>
     </option>
@@ -259,9 +247,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\palletTown\3DPalletTown\objects" />
       <recent name="D:\palletTown\3DPalletTown\objects\TestBulba" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\palletTown\3DPalletTown\objects" />
       <recent name="D:\palletTown\3DPalletTown\objects\BulbasaurNew" />
       <recent name="D:\palletTown\3DPalletTown\objects\BulbasaurNew\Textures" />
     </key>
@@ -367,7 +357,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458141431443</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Got a different bulba to get part of the textures to appear">
+      <created>1458699981544</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1458699981544</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -383,23 +379,23 @@
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14537445" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2444934" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22555205" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22555205" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -428,20 +424,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sample/tie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Camera.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -794,10 +776,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/objects/House/House.mtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76551723">
-          <caret line="161" column="21" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
+        <state vertical-scroll-proportion="1.4568965">
+          <caret line="228" column="36" selection-start-line="228" selection-start-column="36" selection-end-line="228" selection-end-column="36" />
           <folding />
         </state>
       </provider>
