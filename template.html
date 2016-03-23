@@ -12,6 +12,7 @@
 <script src="js/loaders/DDSLoader.js"></script>
 <script src="js/loaders/MTLLoader.js"></script>
 <script src="js/loaders/OBJLoader.js"></script>
+<script src="js/loaders/OBJMTLLoader.js"></script>
 <script>
     // Create scene and camera
     var scene = new THREE.Scene();
@@ -68,9 +69,9 @@
      floor.rotation.x = Math.PI / 2;
      scene.add(floor);
      */
-    var floorTexture = new THREE.ImageUtils.loadTexture('objects/images/grass.png');
+    var floorTexture = new THREE.ImageUtils.loadTexture('objects/images/grass.jpg');
     floorTexture.wrapS = floorTexture.wrapT = THREE.MirroredRepeatWrapping;
-    floorTexture.repeat.set( 100, 100);
+    floorTexture.repeat.set( 200, 200);
     var floorMaterial = new THREE.MeshBasicMaterial({map: floorTexture, side: THREE.DoubleSide});
     var floorGeometry = new THREE.PlaneGeometry(1000,1000,10,10);
     var floor = new THREE.Mesh(floorGeometry, floorMaterial);
@@ -137,12 +138,36 @@
         return bulba;
     }
 
+    function loadNewBulba() {
+        // load bulbasaur
+        var bulba = new THREE.Object3D();
+        var onError = function (xhr) {
+        };
+        THREE.Loader.Handlers.add(/\.dds$/i, new THREE.DDSLoader());
+        var mtlLoader = new THREE.MTLLoader();
+        mtlLoader.setBaseUrl('objects/TestBulba/');
+        mtlLoader.setPath('objects/TestBulba/');
+        mtlLoader.load('Bulba.mtl', function (materials) {
+            materials.preload();
+            var objLoader = new THREE.OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath('objects/TestBulba/');
+            objLoader.load('Bulba.obj', function (object) {
+                object.scale.set(1.5, 1.5, 1.5);
+                object.position.set(0, 0.4, 5);
+                bulba.add(object);
+
+            }, onProgress, onError);
+        });
+        return bulba;
+    }
+
     function loadTree(){
         var leafMesh = new THREE.ImageUtils.loadTexture('objects/tree/');
 
     }
 
-    // used to move the cube around on the screen
+    // used for movement
     var move = function movement(){
 
         var delta = clock.getDelta();
@@ -194,7 +219,8 @@
 
     };
 
-
+    var bulba2 = loadNewBulba();
+    scene.add(bulba2);
     var bulba = loadBulba();
     var bulbaBox = getBox3(bulba);
     getBox3(cube);
