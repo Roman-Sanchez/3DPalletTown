@@ -25,6 +25,7 @@
     var bulba2;
     var lab;
     var pika;
+    var ash;
     var house;
     var tempPB;
     var tempPB2;
@@ -129,8 +130,9 @@
         // Build trees
         loadTrees();
 
-        // Ears are not getting texture
-        pika = loadOBJ("objects/Pikachu/", "objects/Pikachu/", "pikachu.obj","pikachu.mtl", 0,0,0, {"x": 0.03, "y": 0.03,"z": 0.03});
+        pika = loadOBJ("objects/Pika/", "objects/Pika/", "untitled.obj","untitled.mtl", 9, 0.4, 5, {"x": 0.03, "y": 0.03,"z": 0.03});
+        bulbs = loadOBJ("objects/TestBulba/", "objects/TestBulba/", "Bulba.obj", "Bulba.mtl", 0, 0.4, 5, {"x": 3, "y": 3, "z":3});
+
 
         tempPB = new THREE.Box3().setFromObject(pika);
         tempPB2 = new THREE.Box3().setFromObject(pika);
@@ -140,17 +142,19 @@
         lab = loadOBJ("objects/ElmPokemonLab/", "objects/ElmPokemonLab/", "Elm\ Pokemon\ Lab.obj", "ElmPokemonLab.mtl",
                 100, -1, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
 
-        bulba2 = loadOBJ("objects/TestBulba/", "objects/TestBulba/", "Bulba.obj", "Bulba.mtl", 0, 0.4, 5, {"x": 3, "y": 3, "z":3});
-        console.log(bulba2);
-        bulba2.rotation = (new THREE.Vector3(0,1,0), 180 * Math.PI / 180);
-        bulbaBox = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
-        bulbaBox.setFromObject(bulba2);
+        ash = loadOBJ("objects/PokeTrainer/", "objects/PokeTrainer/", "ash1.obj","ash1.mtl", 0, 0, 0, {"x": 0.25, "y": 0.25,"z": 0.25});
 
-        scene.add(bulba2);
-        bulbaHelper = new THREE.BoundingBoxHelper( bulba2, 0xffffff );
+
+        console.log(ash);
+        bulbaBox = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
+        bulbaBox.setFromObject(ash);
+
+        scene.add(ash);
+        bulbaHelper = new THREE.BoundingBoxHelper( ash, 0xffffff );
         scene.add( bulbaHelper );
 
         // add all the objects created in the init function to the objectList variable
+        addOBJToList(bulbs);
         addOBJToList(pika);
         addOBJToList(house);
         addOBJToList(lab);
@@ -323,20 +327,20 @@
         var speed = 0.5;
 
         if( keyboard.pressed("W") ) {
-            bulba2.translateZ(-speed);
+            ash.translateZ(-speed);
         }
 
         if( keyboard.pressed("S") ) {
-            bulba2.translateZ(speed);
+            ash.translateZ(speed);
         }
 
         // Create rotations to rotate the cube
 
         if ( keyboard.pressed("A") )
-            bulba2.rotateOnAxis( new THREE.Vector3(0,1,0), rotateAngle);
+            ash.rotateOnAxis( new THREE.Vector3(0,1,0), rotateAngle);
         if ( keyboard.pressed("D") )
-            bulba2.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
-        cameraMovement(bulba2);
+            ash.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
+        cameraMovement(ash);
     };
 
     /***********************************************************
