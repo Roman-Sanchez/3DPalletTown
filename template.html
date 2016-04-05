@@ -158,12 +158,12 @@
         tempPB = new THREE.Box3().setFromObject(pika);
         tempPB2 = new THREE.Box3().setFromObject(pika);
 
-        house = loadOBJ("objects/House/", "objects/House/", "House.obj", "House.mtl", -100, -0.199, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
-        house2 = loadOBJ("objects/House1/", "objects/House1/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", -50, -0.199, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
+        house = loadOBJ("objects/House/", "objects/House/", "House.obj", "House.mtl", -50, -0.199, -50, {"x": 0.2, "y": 0.2, "z": 0.2});
+        house2 = loadOBJ("objects/House1/", "objects/House1/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", 50, -0.199, -50, {"x": 0.2, "y": 0.2, "z": 0.2});
         house3 = loadOBJ("objects/House/", "objects/House/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", -100, -0.199, -500, {"x": 0.2, "y": 0.2, "z": 0.2});
 
         lab = loadOBJ("objects/ElmPokemonLab/", "objects/ElmPokemonLab/", "Elm\ Pokemon\ Lab.obj", "ElmPokemonLab.mtl",
-                100, -1, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
+                50, -1, 50, {"x": 0.5, "y": 0.2, "z": 0.2});
 
         ash = loadOBJ("objects/PokeTrainer/", "objects/PokeTrainer/", "ash1.obj","ash1.mtl", 0, 0, 0, {"x": 0.25, "y": 0.25,"z": 0.25});
 
@@ -212,7 +212,7 @@
 
         // create the boundaries using trees
         var objScale = {"x": 0.09, "y": 0.09, "z": 0.09};
-        for (var h = 0; h < 150; h += 7)
+        for (var h = 0; h < 100; h += 7)
         {
             var num = 0;
 
@@ -223,16 +223,16 @@
                 num = h;
             }
 
-            var tree1 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", 150, 0, -h, objScale);
+            var tree1 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", 100, 0, -h, objScale);
             tree1.castShadow = true;
-            var tree2 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -150, 0, h, objScale);
-            var tree3 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -150, 0, -h, objScale);
-            var tree4 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", 150, 0, h, objScale);
+            var tree2 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -100, 0, h, objScale);
+            var tree3 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -100, 0, -h, objScale);
+            var tree4 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", 100, 0, h, objScale);
 
-            var tree5 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -h, 0, 150, objScale);
-            var tree6 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -h, 0, -110, objScale);
-            var tree7 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", h, 0, -110, objScale);
-            var tree8 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", h, 0, 150, objScale);
+            var tree5 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -h, 0, 100, objScale);
+            var tree6 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -h, 0, -100, objScale);
+            var tree7 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", h, 0, -100, objScale);
+            var tree8 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", h, 0, 100, objScale);
 
             // add all objects to the list of objects
             addOBJToList(tree1);
@@ -363,9 +363,9 @@
             bulbaBox.setFromObject(bulba2);
             var collision = bulbaBox.intersectsBox(tempPB);
             //console.log(collision)
-            if(collision){
+            if(collision || ash.position.z >= 95 || ash.position.z <= -95 || ash.position.x >= 95 || ash.position.x <= -95) {
                 //console.log(collision)
-                bulba2.translateZ(speed);
+                ash.translateZ(speed);
                 return;
             }
 //            for (var i = 0; i < ObjectBoxes[i]; i++){
@@ -376,6 +376,13 @@
 
         if( keyboard.pressed("S") ) {
             ash.translateZ(speed);
+            var collision = bulbaBox.intersectsBox(tempPB);
+            //console.log(collision)
+            if(collision || ash.position.z >= 95 || ash.position.z <= -95 || ash.position.x >= 95 || ash.position.x <= -95) {
+                //console.log(collision)
+                ash.translateZ(-speed);
+                return;
+            }
         }
 
         // Create rotations to rotate the cube
@@ -385,7 +392,7 @@
         if ( keyboard.pressed("D") )
             ash.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
 
-        cameraMovement(ash);1
+        cameraMovement(ash);
     };
 
     /***********************************************************
