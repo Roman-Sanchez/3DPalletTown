@@ -1,21 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b16e715-a1bc-4210-8770-d2db783b4dc4" name="Default" comment="Added Flowers&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House1/h_kage_lm1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House1/h_mado_lm1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House1/mt_rdh01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/h_in.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/h_kage_lm1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/h_mado_lm1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/mt_rdh01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/mt_rdh02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House1/Pallet Town House.mtl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House1/Pallet Town House.obj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/Pallet Town House 2.mtl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/Pallet Town House 2.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/flowers.jpg" afterPath="$PROJECT_DIR$/objects/flowers.jpg" />
+    <list default="true" id="9b16e715-a1bc-4210-8770-d2db783b4dc4" name="Default" comment="Added Houses&#10;&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Bulbasaur/bulbasaurtex.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Bulbasaur/eye1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Bulbasaur/eyes/eye1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Bulbasaur/eyes/eye2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Bulbasaur/eyes/eye3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Bulbasaur/eyes/eye4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Bulbasaur/eyes/eye5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Charmander/hitokage_0_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Charmander/hitokage_0_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Charmander/hitokage_1_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Charmander/hitokage_1_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Jigglypuff/purin_0_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Jigglypuff/purin_c_1_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/Pikachu.psk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/PikachuDh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/PikachuEyeDh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/PikachuHohoDh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/PikachuMouthDh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/PikachuSpecularDh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/pikachu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/Pikachu.psk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/PikachuDh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/PikachuEyeDh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/PikachuHohoDh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/PikachuMouthDh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/PikachuSpecularDh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Squirtle/zenigame_0_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Squirtle/zenigame_1_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_BodyA1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_BodyA2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_BodyANor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_BodyB1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_BodyB2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_BodyBNor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_Eye1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_Eye2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_EyeNor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_Mouth1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_Mouth2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images/pm0037_00_MouthNor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_BodyA1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_BodyA2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_BodyANor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_BodyB1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_BodyB2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_BodyBNor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_Eye1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_Eye2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_EyeNor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_Mouth1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_Mouth2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Images_Shiny/pm0037_00_MouthNor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Vulpix.FBX" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/water.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Bulbasaur/bulb.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Bulbasaur/bulb.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Bulbasaur/bulbasaur.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Charmander/char.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Charmander/char.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Charmander/charmander.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Charmander/charmander.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Jigglypuff/jig.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Jigglypuff/jig.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Jigglypuff/jigglypuff.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Jigglypuff/jigglypuff.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/Pikachu.dae" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/Pikachu.smd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/pik.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/pik.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/pikachu.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/pikachu.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/untitled.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pika/untitled.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/Pikachu.dae" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/Pikachu.smd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/pik.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Pikachu/pik.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Squirtle/squirt.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Squirtle/squirt.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Squirtle/squirtle.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Squirtle/squirtle.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Tag.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/Vulpix/Vulpix.DAE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/fence/fence.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/fence/fence.obj" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur-Shiny01.blend" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur-Shiny01.blend1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur-Shiny01.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur-Shiny01.mtl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur-Shiny01.obj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur-Shiny01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur-Shiny01.x" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur.blend" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur.mtl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur.obj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur.x" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Bulbasaur.blend" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Bulbasaur.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Bulbasaur.x" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Fushigidane.md5mesh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Fushigidane.mtl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Fushigidane.psk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/HELP AND README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Minecraft/BR_Bulbasaur-Shiny01_LARGE.schematic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Minecraft/BR_Bulbasaur-Shiny01_MEDIUM.schematic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Minecraft/BR_Bulbasaur-Shiny01_SMALL.schematic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Minecraft/BR_Bulbasaur_LARGE.schematic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Minecraft/BR_Bulbasaur_MEDIUM.schematic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Minecraft/BR_Bulbasaur_SMALL.schematic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Minecraft/Bulbasaur_LARGE.schematic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Minecraft/Bulbasaur_MEDIUM.schematic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Minecraft/Bulbasaur_SMALL.schematic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Textures/FushigidaneDh.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Textures/FushigidaneEyeDh.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Textures/fushigidane_0_0.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Textures/fushigidane_0_1.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Textures/fushigidane_1_0.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Textures/fushigidane_1_1.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/untitled.mtl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/objects/Bulbasaur/untitled.obj" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/Bulbasaur/Bulbasaur.obj" afterPath="$PROJECT_DIR$/objects/Bulbasaur/Bulbasaur.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template.html" afterPath="$PROJECT_DIR$/template.html" />
     </list>
     <ignored path="CS312.iws" />
@@ -40,8 +152,8 @@
       <file leaf-file-name="template.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.085299455">
-              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.19166666">
+              <caret line="163" column="81" selection-start-line="163" selection-start-column="81" selection-end-line="163" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -60,8 +172,8 @@
       <file leaf-file-name="gabistest.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gabistest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.0">
-              <caret line="428" column="7" selection-start-line="428" selection-start-column="7" selection-end-line="428" selection-end-column="7" />
+            <state vertical-scroll-proportion="-7.269231">
+              <caret line="407" column="39" selection-start-line="407" selection-start-column="39" selection-end-line="407" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -118,7 +230,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1378" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -179,24 +292,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CS312" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DPalletTown3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="objects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PokeTrainer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -221,6 +316,116 @@
       <recent name="D:\palletTown\3DPalletTown\objects\BulbasaurNew" />
       <recent name="D:\palletTown\3DPalletTown\objects\BulbasaurNew\Textures" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/template.html</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="JavaScript Debug.template.html">
     <configuration default="false" name="template.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/CS312/template.html">
@@ -347,7 +552,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459888897777</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added Houses&#10;&#10;">
+      <created>1459890024187</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1459890024187</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -360,14 +571,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2143906" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2137628" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11198738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -402,7 +613,8 @@
     <MESSAGE value="added a lab object and a house object. Create a function that creates and returns an object3D." />
     <MESSAGE value="Added Ash" />
     <MESSAGE value="Added Flowers&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Flowers&#10;" />
+    <MESSAGE value="Added Houses&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Houses&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -655,7 +867,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objects/Bulbasaur/Bulbasaur.obj">
+    <entry file="file://$PROJECT_DIR$/objects/Bulbasaur/bulbasaur.obj">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
@@ -666,27 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.029310346">
           <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objects/Bulbasaur/Fushigidane.mtl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur.mtl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objects/Bulbasaur/BR_Bulbasaur.obj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -748,14 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gabistest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.0">
-          <caret line="428" column="7" selection-start-line="428" selection-start-column="7" selection-end-line="428" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/x0ynbzqzp8-PalletTown/PalletTown/Fbx Model/PalletTownHouse.fbx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -764,10 +947,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gabistest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.269231">
+          <caret line="407" column="39" selection-start-line="407" selection-start-column="39" selection-end-line="407" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.085299455">
-          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.19166666">
+          <caret line="163" column="81" selection-start-line="163" selection-start-column="81" selection-end-line="163" selection-end-column="81" />
           <folding />
         </state>
       </provider>

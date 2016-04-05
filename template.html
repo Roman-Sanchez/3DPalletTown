@@ -25,10 +25,19 @@
     var bulba2;
     var lab;
     var pika;
+    var jig;
+    var char;
+    var squirt;
     var ash;
     var house;
-    var house1;
     var house2;
+    var house3;
+    var fence;
+    var fence2;
+    var fence3;
+    var fence4;
+    var fence5;
+   // var fence6;
     var flowers;
     var tempPB;
     var tempPB2;
@@ -55,6 +64,7 @@
     function init(){
         console.log("Hello");
         var ambientLight = new THREE.AmbientLight(0x404040);
+        ambientLight.intensity = 4;
         scene.add(ambientLight);
 
         var directionalLight = new THREE.DirectionalLight( 0xffffff, 1.0 );
@@ -110,17 +120,17 @@
 
         var flower = new THREE.ImageUtils.loadTexture('objects/flowers.jpg');
         //flower.repeat.set( 1, 1);
-        var flowerMaterial = new THREE.MeshBasicMaterial({map: flower, side: THREE.DoubleSide});
-        var flowerGeo = new THREE.PlaneGeometry(10,10,2,2);
-        var flow = new THREE.Mesh(flowerGeo, flowerMaterial);
-        flower.repeat.set( 1, 1);
-        //flow.position.z = 0;
-        flow.position.y = 0.001;
-        flow.position.x = 20;
-        flow.rotation.x = Math.PI / 2;
-       // flow.rotation.z = -100;
+        flower.wrapS = flower.wrapT = THREE.MirroredRepeatWrapping;
 
-        //flow.position.x = 100;
+        var flowerMaterial = new THREE.MeshBasicMaterial({map: flower, side: THREE.DoubleSide});
+        var flowerGeo = new THREE.PlaneGeometry(25,25,10,10);
+        var flow = new THREE.Mesh(flowerGeo, flowerMaterial);
+        flower.repeat.set( 3, 3);
+        flow.receiveShadow = true;
+        flow.position.y = 0.001;
+        flow.position.x = -30;
+        flow.position.z = 50;
+        flow.rotation.x = Math.PI / 2;
         scene.add(flow);
 
         //camera.lookAt(cube);
@@ -151,8 +161,11 @@
         // Build trees
         loadTrees();
 
-        pika = loadOBJ("objects/Pika/", "objects/Pika/", "untitled.obj","untitled.mtl", 9, 0.4, 5, {"x": 0.03, "y": 0.03,"z": 0.03});
-        bulbs = loadOBJ("objects/TestBulba/", "objects/TestBulba/", "Bulba.obj", "Bulba.mtl", 0, 0.4, 5, {"x": 3, "y": 3, "z":3});
+        pika = loadOBJ("objects/Pika/", "objects/Pika/", "untitled.obj","untitled.mtl", 9, 0.4, 5, {"x": 0.02, "y": 0.02,"z": 0.02});
+        bulbs = loadOBJ("objects/Bulbasaur/", "objects/Bulbasaur/", "bulb.obj", "bulb.mtl", 0, 0.4, 25, {"x": 0.006, "y": 0.006, "z":0.006});
+        char = loadOBJ("objects/Charmander/", "objects/Charmander/", "char.obj","char.mtl", 20, 0.4, -50, {"x": 0.4, "y": 0.4,"z": 0.4});
+        jig = loadOBJ("objects/Jigglypuff/", "objects/Jigglypuff/", "jig.obj","jig.mtl", -50, 0.4, 15, {"x": 0.3, "y": 0.3,"z": 0.3});
+        squirt = loadOBJ("objects/Squirtle/", "objects/Squirtle/", "squirt.obj","squirt.mtl", -31, 0.4, 42, {"x": 0.4, "y": 0.4,"z": 0.4});
 
 
         tempPB = new THREE.Box3().setFromObject(pika);
@@ -161,6 +174,12 @@
         house = loadOBJ("objects/House/", "objects/House/", "House.obj", "House.mtl", -50, -0.199, -50, {"x": 0.2, "y": 0.2, "z": 0.2});
         house2 = loadOBJ("objects/House1/", "objects/House1/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", 50, -0.199, -50, {"x": 0.2, "y": 0.2, "z": 0.2});
         house3 = loadOBJ("objects/House/", "objects/House/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", -100, -0.199, -500, {"x": 0.2, "y": 0.2, "z": 0.2});
+        fence = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -20.75 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        fence2 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -27.75 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        fence3 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -24.25, -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        fence4 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -31.25 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        fence5 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -34.75 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        fence6 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -38.25 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
 
         lab = loadOBJ("objects/ElmPokemonLab/", "objects/ElmPokemonLab/", "Elm\ Pokemon\ Lab.obj", "ElmPokemonLab.mtl",
                 50, -1, 50, {"x": 0.5, "y": 0.2, "z": 0.2});
@@ -179,14 +198,25 @@
 
         scene.add(ash);
         bulbaHelper = new THREE.BoundingBoxHelper( ash, 0xffffff );
+       // bulbaHelper.box.isIntersectionBox(pika.box)
+
         scene.add( bulbaHelper );
 
         // add all the objects created in the init function to the objectList variable
         addOBJToList(bulbs);
         addOBJToList(pika);
+        addOBJToList(jig);
+        addOBJToList(char);
+        addOBJToList(squirt);
         addOBJToList(house);
         addOBJToList(house2);
         addOBJToList(house3);
+        addOBJToList(fence);
+        addOBJToList(fence2);
+        addOBJToList(fence3);
+        addOBJToList(fence4);
+        addOBJToList(fence5);
+        addOBJToList(fence6);
         addOBJToList(lab);
 
         // wrap all objects in box3
