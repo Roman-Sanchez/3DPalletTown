@@ -27,6 +27,7 @@
     var pika;
     var ash;
     var house;
+    var flowers;
     var tempPB;
     var tempPB2;
 
@@ -101,6 +102,21 @@
         floor.position.y = 0;
         floor.rotation.x = Math.PI / 2;
         scene.add(floor);
+
+        var flower = new THREE.ImageUtils.loadTexture('objects/flowers.jpg');
+        //flower.repeat.set( 1, 1);
+        var flowerMaterial = new THREE.MeshBasicMaterial({map: flower, side: THREE.DoubleSide});
+        var flowerGeo = new THREE.PlaneGeometry(10,10,2,2);
+        var flow = new THREE.Mesh(flowerGeo, flowerMaterial);
+        flower.repeat.set( 1, 1);
+        //flow.position.z = 0;
+        flow.position.y = 0.001;
+        flow.position.x = 20;
+        flow.rotation.x = Math.PI / 2;
+       // flow.rotation.z = -100;
+
+        //flow.position.x = 100;
+        scene.add(flow);
 
         //camera.lookAt(cube);
         camera.position.z = 5;
@@ -340,7 +356,8 @@
             ash.rotateOnAxis( new THREE.Vector3(0,1,0), rotateAngle);
         if ( keyboard.pressed("D") )
             ash.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
-        cameraMovement(ash);
+
+        cameraMovement(ash);1
     };
 
     /***********************************************************

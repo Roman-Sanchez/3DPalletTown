@@ -21,9 +21,14 @@
 
     var keyboard = new THREEx.KeyboardState();
     var clock = new THREE.Clock();
-
-    var ambientLight = new THREE.AmbientLight(0x404040);
-    scene.add(ambientLight);
+    var bulbaBox;
+    var bulba2;
+    var lab;
+    var pika;
+    var ash;
+    var house;
+    var tempPB;
+    var tempPB2;
 
     // Fog
     //scene.fog = new THREE.FogExp2( 0xefd1b5, 0.002 );
@@ -34,134 +39,199 @@
     // bounding box helper objects
     var helperBoxes = [];
 
+    // list of all the box3s
     var ObjectBoxes = [];
 
-    var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
-    directionalLight.position.set( 0, 1, 0 );
-    directionalLight.castShadow = true;
-    scene.add( directionalLight );
+    // define renderer
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
 
-    //    Leaving this here in case I need to reference it later. can be deleted whenever
-    //    var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    //    var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-    //    var cube = new THREE.Mesh( geometry, material );
-    //    cube.position.y = 0.5;
-    //    cube.castShadow = true;
-    //    cube.receiveShadow = true;
-    //    scene.add( cube );
+    function init(){
+        console.log("Hello");
+        var ambientLight = new THREE.AmbientLight(0x404040);
+        scene.add(ambientLight);
 
-    var geometry2 = new THREE.PlaneGeometry(100, 100);
-    var material2 = new THREE.MeshBasicMaterial({color: 0x1100FF, side: THREE.DoubleSide});
-    var plane = new THREE.Mesh(geometry2, material2);
-    plane.receiveShadow = true;
-    plane.position.y = 0;
+        var directionalLight = new THREE.DirectionalLight( 0xffffff, 1.0 );
+        directionalLight.position.set( -1000, 100, 1000 );
+        directionalLight.castShadow = true;
+        scene.add( directionalLight );
 
-    // Rotate the plane to lay flat along the ground
-    plane.rotateX(90 * Math.PI / 180 );
+        // Leaving this here in case I need to reference it later. can be deleted whenever
+        // var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+        // var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+        // var cube = new THREE.Mesh( geometry, material );
+        // cube.position.y = 0.5;
+        // cube.castShadow = true;
+        // cube.receiveShadow = true;
+        // scene.add( cube );
 
-    // scene.add(plane);
+        var geometry2 = new THREE.PlaneGeometry(100, 100);
+        var material2 = new THREE.MeshBasicMaterial({color: 0x1100FF, side: THREE.DoubleSide});
+        var plane = new THREE.Mesh(geometry2, material2);
+        plane.receiveShadow = true;
+        plane.castShadow= true;
+        plane.position.y = 0;
 
-    //FLOOR
-    /**
-     *
-     *
-     var floorTexture = new THREE.ImageUtils.loadTexture( 'images/checkerboard.jpg' );
-     floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
-     floorTexture.repeat.set( 10, 10 );
-     var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
-     var floorGeometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
-     var floor = new THREE.Mesh(floorGeometry, floorMaterial);
-     floor.position.y = -0.5;
-     floor.rotation.x = Math.PI / 2;
-     scene.add(floor);
-     */
-    var floorTexture = new THREE.ImageUtils.loadTexture('objects/images/grass.jpg');
-    floorTexture.wrapS = floorTexture.wrapT = THREE.MirroredRepeatWrapping;
-    floorTexture.repeat.set( 200, 200);
-    var floorMaterial = new THREE.MeshBasicMaterial({map: floorTexture, side: THREE.DoubleSide});
-    var floorGeometry = new THREE.PlaneGeometry(1000,1000,20,20);
-    var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+        // Rotate the plane to lay flat along the ground
+        plane.rotateX(90 * Math.PI / 180 );
 
-    floor.position.y = 0;
-    floor.rotation.x = Math.PI / 2;
-    scene.add(floor);
+        //FLOOR
+        /**
+         *
+         *
+         var floorTexture = new THREE.ImageUtils.loadTexture( 'images/checkerboard.jpg' );
+         floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
+         floorTexture.repeat.set( 10, 10 );
+         var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
+         var floorGeometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
+         var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+         floor.position.y = -0.5;
+         floor.rotation.x = Math.PI / 2;
+         scene.add(floor);
+         */
+        var floorTexture = new THREE.ImageUtils.loadTexture('objects/images/grass.jpg');
+        floorTexture.wrapS = floorTexture.wrapT = THREE.MirroredRepeatWrapping;
+        floorTexture.repeat.set( 200, 200);
+        var floorMaterial = new THREE.MeshBasicMaterial({map: floorTexture, side: THREE.DoubleSide});
+        var floorGeometry = new THREE.PlaneGeometry(1000,1000,20,20);
+        var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+        floor.receiveShadow = true;
+        floor.position.y = 0;
+        floor.rotation.x = Math.PI / 2;
+        scene.add(floor);
 
-    //camera.lookAt(cube);
-    camera.position.z = 5;
-    camera.position.y = 1;
+        //camera.lookAt(cube);
+        camera.position.z = 5;
+        camera.position.y = 1;
 
-    // Skybox
-    var axes = new THREE.AxisHelper(100);
-    scene.add(axes);
+        // Skybox
+        var axes = new THREE.AxisHelper(100);
+        scene.add(axes);
 
-    var urls = ["objects/images/right.png", "objects/images/left.png", "objects/images/top.png",
-        "objects/images/bottom.png","objects/images/front.png","objects/images/back.png"];
-    var skyGeo = new THREE.CubeGeometry(1000, 600, 1000);
-    var materialArray = [];
-    for (var i = 0; i < 6; i++){
-        materialArray.push(new THREE.MeshBasicMaterial(
-                {
-                    map: THREE.ImageUtils.loadTexture(urls[i]),
-                    side: THREE.BackSide
-                }
-        ));
+        var urls = ["objects/images/right.png", "objects/images/left.png", "objects/images/top.png",
+            "objects/images/bottom.png","objects/images/front.png","objects/images/back.png"];
+        var skyGeo = new THREE.CubeGeometry(1000, 600, 1000);
+        var materialArray = [];
+        for (var i = 0; i < 6; i++){
+            materialArray.push(new THREE.MeshBasicMaterial(
+                    {
+                        map: THREE.ImageUtils.loadTexture(urls[i]),
+                        side: THREE.BackSide
+                    }
+            ));
+        }
+        var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
+        var skyBox = new THREE.Mesh(skyGeo, skyMaterial);
+        skyBox.position.y = 49.5;
+        scene.add(skyBox);
+
+        // Build trees
+        loadTrees();
+
+        pika = loadOBJ("objects/Pika/", "objects/Pika/", "untitled.obj","untitled.mtl", 9, 0.4, 5, {"x": 0.03, "y": 0.03,"z": 0.03});
+        bulbs = loadOBJ("objects/TestBulba/", "objects/TestBulba/", "Bulba.obj", "Bulba.mtl", 0, 0.4, 5, {"x": 3, "y": 3, "z":3});
+
+
+        tempPB = new THREE.Box3().setFromObject(pika);
+        tempPB2 = new THREE.Box3().setFromObject(pika);
+
+        house = loadOBJ("objects/House/", "objects/House/", "House.obj", "House.mtl", -100, -0.199, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
+
+        lab = loadOBJ("objects/ElmPokemonLab/", "objects/ElmPokemonLab/", "Elm\ Pokemon\ Lab.obj", "ElmPokemonLab.mtl",
+                100, -1, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
+
+        ash = loadOBJ("objects/PokeTrainer/", "objects/PokeTrainer/", "ash1.obj","ash1.mtl", 0, 0, 0, {"x": 0.25, "y": 0.25,"z": 0.25});
+
+
+        console.log(ash);
+        bulbaBox = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
+        bulbaBox.setFromObject(ash);
+
+        scene.add(ash);
+        bulbaHelper = new THREE.BoundingBoxHelper( ash, 0xffffff );
+        scene.add( bulbaHelper );
+
+        // add all the objects created in the init function to the objectList variable
+        addOBJToList(bulbs);
+        addOBJToList(pika);
+        addOBJToList(house);
+        addOBJToList(lab);
+
+        // wrap all objects in box3
+        wrapObjects(objectList);
+
+        // add all objects to the scene
+        addToScene(objectList);
+
     }
-    var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
-    var skyBox = new THREE.Mesh(skyGeo, skyMaterial);
-    skyBox.position.y = 49.5;
-    scene.add(skyBox);
 
+    /**********************************************************
+     * takes the list of objects and adds them to the scene
+     ***********************************************************/
+    function addToScene(list){
+        for (var i = 0; i < list.length; i++){
+            scene.add(list[i]);
+        }
+    }
+    /***********************************************************
+     * Load all the trees that will bound the world.
+     ***********************************************************/
+    function loadTrees(){
 
-    /**
-     * URLs for the objects
-     *
-     **/
-    var houseObjURL = "objects/House/";
-    var houseMTLURL = "objects/House/";
-    var houseName = "House.obj";
-    var houseMTL = "House.mtl";
+        // create the boundaries using trees
+        var objScale = {"x": 0.09, "y": 0.09, "z": 0.09};
+        for (var h = 0; h < 150; h += 7)
+        {
+            var num = 0;
 
-    /*
+            if ((h % 2) == 0) {
+                num = -h;
+            }
+            else {
+                num = h;
+            }
+
+            var tree1 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", 150, 0, -h, objScale);
+            tree1.castShadow = true;
+            var tree2 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -150, 0, h, objScale);
+            var tree3 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -150, 0, -h, objScale);
+            var tree4 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", 150, 0, h, objScale);
+
+            var tree5 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -h, 0, 150, objScale);
+            var tree6 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -h, 0, -110, objScale);
+            var tree7 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", h, 0, -110, objScale);
+            var tree8 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", h, 0, 150, objScale);
+
+            // add all objects to the list of objects
+            addOBJToList(tree1);
+            addOBJToList(tree2);
+            addOBJToList(tree3);
+            addOBJToList(tree4);
+            addOBJToList(tree5);
+            addOBJToList(tree6);
+            addOBJToList(tree7);
+            addOBJToList(tree8);
+        }
+    }
+
+    /***********************************************************
      * logs the loading process for each asset
-     * */
+     ***********************************************************/
     var onProgress = function ( xhr ) {
         if ( xhr.lengthComputable ) {
             var percentComplete = xhr.loaded / xhr.total * 100;
             // console.log( Math.round(percentComplete, 2) + '% downloaded' );
         }
     };
-    //
-    //    function loadBulba() {
-    //        // load bulbasaur
-    //        var bulba = new THREE.Object3D();
-    //        var onError = function (xhr) {
-    //        };
-    //        THREE.Loader.Handlers.add(/\.dds$/i, new THREE.DDSLoader());
-    //        var mtlLoader = new THREE.MTLLoader();
-    //        mtlLoader.setBaseUrl('objects/Bulbasaur/');
-    //        mtlLoader.setPath('objects/Bulbasaur/');
-    //        mtlLoader.load('BR_Bulbasaur.mtl', function (materials) {
-    //            materials.preload();
-    //            var objLoader = new THREE.OBJLoader();
-    //            objLoader.setMaterials(materials);
-    //            objLoader.setPath('objects/Bulbasaur/');
-    //            objLoader.load('Bulbasaur.obj', function (object) {
-    //                object.position.set(0, 0, 2);
-    //                object.scale.set(0.2, 0.2, 0.2);
-    //                bulba.add(object);
-    //                scene.add(bulba);
-    //            }, onProgress, onError);
-    //        });
-    //        return bulba;
-    //    }
 
-    /**
+    /****************************************
+     * This method is not needed at this point, just need to change the way bulba2 is being loaded
+     * /
+     /***********************************************************
      * Load the bulbasaur asset.
-     * */
+     ***********************************************************/
     function loadNewBulba() {
         // load bulbasaur
         var bulba = new THREE.Object3D();
@@ -169,16 +239,16 @@
         };
         THREE.Loader.Handlers.add(/\.dds$/i, new THREE.DDSLoader());
         var mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setBaseUrl('objects/Pikachu/');
-        mtlLoader.setPath('objects/Pikachu/');
-        mtlLoader.load('pik.mtl', function (materials) {
+        mtlLoader.setBaseUrl('objects/TestBulba/');
+        mtlLoader.setPath('objects/TestBulba/');
+        mtlLoader.load('Bulba.mtl', function (materials) {
             materials.preload();
             var objLoader = new THREE.OBJLoader();
             objLoader.setMaterials(materials);
-            objLoader.setPath('objects/Pikachu/');
-            objLoader.load('pik.obj', function (object) {
-                object.scale.set(1, 1, 1);
-              //  object.rotateOnAxis(new THREE.Vector3(0,1,0), 180 * Math.PI / 180);
+            objLoader.setPath('objects/TestBulba/');
+            objLoader.load('Bulba.obj', function (object) {
+                object.scale.set(3, 3, 3);
+                object.rotateOnAxis(new THREE.Vector3(0,1,0), 180 * Math.PI / 180);
                 object.position.set(0, 0.4, 5);
                 bulba.add(object);
 
@@ -186,32 +256,8 @@
         });
         return bulba;
     }
-    //
-    //    function loadLab() {
-    //        // load bulbasaur
-    //        var object3D = new THREE.Object3D();
-    //        var onError = function (xhr) {
-    //        };
-    //        THREE.Loader.Handlers.add(/\.dds$/i, new THREE.DDSLoader());
-    //        var mtlLoader = new THREE.MTLLoader();
-    //        mtlLoader.setBaseUrl('objects/ElmPokemonLab/');
-    //        mtlLoader.setPath('objects/ElmPokemonLab/');
-    //        mtlLoader.load('ElmPokemonLab.mtl', function (materials) {
-    //            materials.preload();
-    //            var objLoader = new THREE.OBJLoader();
-    //            objLoader.setMaterials(materials);
-    //            objLoader.setPath('objects/ElmPokemonLab/');
-    //            objLoader.load('Elm\ Pokemon\ Lab.obj', function (object) {
-    //                object.scale.set(0.2, 0.2, 0.2);
-    //                object.position.set(100, -1, -100);
-    //                object3D.add(object);
-    //
-    //            }, onProgress, onError);
-    //        });
-    //        return object3D;
-    //    }
 
-    /*
+    /***********************************************************
      * Create an obj and map its textures using the mtl file
      *
      * @objBaseURL: file path to where the .obj is located
@@ -222,7 +268,7 @@
      * @ypos:       y position
      * @zpos:       z position
      * @objScale:   map with scale values (x, y, z)
-     * */
+     ***********************************************************/
     function loadOBJ(objBaseURL, mtlBaseURL, objName, mtlName, xpos, ypos, zpos, objScale) {
 
         // set the position to a default of zero if they are not passed in
@@ -235,6 +281,7 @@
         if (zpos == null)
             zpos = 0;
 
+        // if objscale is not provided it will set it to 1
         if (objScale == null)
             objScale = {"x": 1, "y": 1, "z": 1};
 
@@ -260,12 +307,16 @@
         return object3D;
     }
 
-    // used for movement
+    /**********************************************************
+     * used for movement
+     **********************************************************/
     var move = function movement(){
 
         // TODO: add collision detection here. If there is a collision, return from the function
         // collision detection, not working currently
         for (var i = 0; i < helperBoxes.length; i ++){
+            //console.log(bulbaBox);
+            //console.log(bulbaBox.intersectsBox(ObjectBoxes[i]));
             if ( bulbaBox.intersectsBox(ObjectBoxes[i]) ){
                 console.log("Contact");
                 return;
@@ -276,25 +327,26 @@
         var speed = 0.5;
 
         if( keyboard.pressed("W") ) {
-            bulba2.translateZ(-speed);
+            ash.translateZ(-speed);
         }
 
         if( keyboard.pressed("S") ) {
-            bulba2.translateZ(speed);
+            ash.translateZ(speed);
         }
 
         // Create rotations to rotate the cube
 
         if ( keyboard.pressed("A") )
-            bulba2.rotateOnAxis( new THREE.Vector3(0,1,0), rotateAngle);
+            ash.rotateOnAxis( new THREE.Vector3(0,1,0), rotateAngle);
         if ( keyboard.pressed("D") )
-            bulba2.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
-        cameraMovement(bulba2);
+            ash.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
+
+        cameraMovement(ash);1
     };
 
-    /*
+    /***********************************************************
      * Adjusts the camera based on user movement
-     * */
+     ***********************************************************/
     function cameraMovement(cube){
 
         // 5 units behind and 3 units above the object
@@ -308,36 +360,15 @@
         camera.lookAt(cube.position);
     }
 
-    /*
+    /***********************************************************
      * Takes the list of bounding helper boxes and adds them to the scene. Strictly for debugging help.
-     *
-     */
+     ***********************************************************/
     function displayHelper(helperBoxes){
         for (var i = 0; i < helperBoxes.length; i++){
             helperBoxes[i].update();
             scene.add(helperBoxes[i]);
         }
     }
-
-    /*
-     * Render the scene
-     * */
-    var render = function () {
-        requestAnimationFrame( render );
-        displayHelper(helperBoxes);
-        bulbaHelper.update();
-        move();
-        /**for (var i = 0; i < box3Array.length; i++){
-            if(bulbaBox.intersectsBox(box3Array[i]))
-            {
-                console.log("Collision");
-            }
-        }**/
-            //bulba.rotation.x += 0.1;
-        renderer.shadowMap.enabled = true;
-        renderer.render(scene, camera);
-
-    };
 
     // Was going to be a function for collision detection, may not use it anymore.
     function collide(object){
@@ -349,16 +380,16 @@
         }
     };
 
-    /*
+    /***********************************************************
      * adds object to the objectList
-     * */
+     ***********************************************************/
     function addOBJToList(currObject){
         objectList.push(currObject);
     }
 
-    /**
+    /***********************************************************
      * wrap all the objects in the objectList with a Box3
-     */
+     ***********************************************************/
     function wrapObjects(objectList){
         var box = new THREE.Box3(new THREE.Vector3(0, 3, 0), new THREE.Vector3(0, 3, 0));
 
@@ -370,75 +401,27 @@
         }
     }
 
-    /*
+    /***********************************************************
      * Takes in a bounding box helper and adds it to the helperBoxes array
      * @bbHelper: BoundingBoxHelper
-     */
+     ***********************************************************/
     function addHelperToList(bbHelper){
         helperBoxes.push(bbHelper);
     }
 
-    // Ears are not getting texture
-    var pika = loadOBJ("objects/Pika/", "objects/Pika/", "untitled.obj","untitled.mtl", 9, 0.4, 5, {"x": 0.03, "y": 0.03,"z": 0.03});
-    var ash = loadOBJ("objects/PokeTrainer/", "objects/PokeTrainer/", "ash.obj","ash.mtl", 15, 0.4, 5, {"x": 0.25, "y": 0.25,"z": 0.25});
-    //var pika = loadOBJ("objects/Pika/", "objects/Pika/", "untitled.obj","untitled.mtl", 9, 0.4, 5, {"x": 0.03, "y": 0.03,"z": 0.03});
-    addOBJToList(pika);
-    scene.add(pika);
+    /***********************************************************
+     * Render the scene
+     ***********************************************************/
+    var render = function () {
+        requestAnimationFrame( render );
+        displayHelper(helperBoxes);
+        bulbaHelper.update();
+        move();
+        renderer.shadowMap.enabled = true;
+        renderer.render(scene, camera);
+    };
 
-    addOBJToList(ash);
-    scene.add(ash);
-
-    var house = loadOBJ(houseObjURL, houseMTLURL, houseName, houseMTL, -100, -0.199, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
-    addOBJToList(house);
-    scene.add(house);
-
-    var objScale = {"x": 0.09, "y": 0.09, "z": 0.09};
-    for (var h = 0; h < 150; h += 7)
-    {
-        var num = 0;
-
-        if ((h % 2) == 0) {
-            num = -h;
-        }
-        else {
-            num = h;
-        }
-
-        var tree1 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", 150, 0, -h, objScale);
-        tree1.castShadow = true;
-        var tree2 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -150, 0, h, objScale);
-        var tree3 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", -150, 0, -h, objScale);
-        var tree4 = loadOBJ("objects/N64Tree/","objects/N64Tree/","N64_Tree.obj", "N64_Tree.mtl", 150, 0, h, objScale);
-        // add all objects to list of objects
-        addOBJToList(tree1);
-        addOBJToList(tree2);
-        addOBJToList(tree3);
-        addOBJToList(tree4);
-
-        // add trees to the scene
-        scene.add(tree1);
-        scene.add(tree2);
-        scene.add(tree3);
-        scene.add(tree4);
-    }
-
-    var lab = loadOBJ("objects/ElmPokemonLab/", "objects/ElmPokemonLab/", "Elm\ Pokemon\ Lab.obj", "ElmPokemonLab.mtl",
-            100, -1, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
-    addOBJToList(lab);
-    scene.add(lab);
-    var bulba2 = loadNewBulba()
-    var bulbaBox = new THREE.Box3(new THREE.Vector3(0, 3, 0), new THREE.Vector3(0, 3, 0));
-    bulbaBox.setFromObject(bulba2);
-
-    scene.add(bulba2);
-    bulbaHelper = new THREE.BoundingBoxHelper( bulba2, 0xffffff );
-    scene.add( bulbaHelper );
-    console.log(bulba2);
-    // var bulba = loadBulba();
-    //var bulbaBox = getBox3(bulba);
-    //getBox3(cube);
-
-    wrapObjects(objectList);
+    init();
     render();
 
 </script>
