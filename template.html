@@ -27,6 +27,8 @@
     var pika;
     var ash;
     var house;
+    var house1;
+    var house2;
     var flowers;
     var tempPB;
     var tempPB2;
@@ -154,6 +156,8 @@
         tempPB2 = new THREE.Box3().setFromObject(pika);
 
         house = loadOBJ("objects/House/", "objects/House/", "House.obj", "House.mtl", -100, -0.199, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
+        house2 = loadOBJ("objects/House1/", "objects/House1/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", -50, -0.199, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
+        house3 = loadOBJ("objects/House/", "objects/House/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", -100, -0.199, -500, {"x": 0.2, "y": 0.2, "z": 0.2});
 
         lab = loadOBJ("objects/ElmPokemonLab/", "objects/ElmPokemonLab/", "Elm\ Pokemon\ Lab.obj", "ElmPokemonLab.mtl",
                 100, -1, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
@@ -173,6 +177,8 @@
         addOBJToList(bulbs);
         addOBJToList(pika);
         addOBJToList(house);
+        addOBJToList(house2);
+        addOBJToList(house3);
         addOBJToList(lab);
 
         // wrap all objects in box3
