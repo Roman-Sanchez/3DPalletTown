@@ -27,12 +27,8 @@
     var pika;
     var ash;
     var house;
-    var house1;
-    var house2;
-    var flowers;
     var tempPB;
     var tempPB2;
-    var cubeBox;
 
     // Fog
     //scene.fog = new THREE.FogExp2( 0xefd1b5, 0.002 );
@@ -63,15 +59,13 @@
         scene.add( directionalLight );
 
         // Leaving this here in case I need to reference it later. can be deleted whenever
-         var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-         var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-         var cube = new THREE.Mesh( geometry, material );
-         cube.position.y = 0.5;
-         cube.castShadow = true;
-         cube.receiveShadow = true;
-        cubeBox  = new THREE.Box3().setFromObject(cube);
-         scene.add( cube );
-
+        // var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+        // var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+        // var cube = new THREE.Mesh( geometry, material );
+        // cube.position.y = 0.5;
+        // cube.castShadow = true;
+        // cube.receiveShadow = true;
+        // scene.add( cube );
 
         var geometry2 = new THREE.PlaneGeometry(100, 100);
         var material2 = new THREE.MeshBasicMaterial({color: 0x1100FF, side: THREE.DoubleSide});
@@ -107,21 +101,6 @@
         floor.position.y = 0;
         floor.rotation.x = Math.PI / 2;
         scene.add(floor);
-
-        var flower = new THREE.ImageUtils.loadTexture('objects/flowers.jpg');
-        //flower.repeat.set( 1, 1);
-        var flowerMaterial = new THREE.MeshBasicMaterial({map: flower, side: THREE.DoubleSide});
-        var flowerGeo = new THREE.PlaneGeometry(10,10,2,2);
-        var flow = new THREE.Mesh(flowerGeo, flowerMaterial);
-        flower.repeat.set( 1, 1);
-        //flow.position.z = 0;
-        flow.position.y = 0.001;
-        flow.position.x = 20;
-        flow.rotation.x = Math.PI / 2;
-       // flow.rotation.z = -100;
-
-        //flow.position.x = 100;
-        scene.add(flow);
 
         //camera.lookAt(cube);
         camera.position.z = 5;
@@ -159,8 +138,6 @@
         tempPB2 = new THREE.Box3().setFromObject(pika);
 
         house = loadOBJ("objects/House/", "objects/House/", "House.obj", "House.mtl", -100, -0.199, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
-        house2 = loadOBJ("objects/House1/", "objects/House1/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", -50, -0.199, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
-        house3 = loadOBJ("objects/House/", "objects/House/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", -100, -0.199, -500, {"x": 0.2, "y": 0.2, "z": 0.2});
 
         lab = loadOBJ("objects/ElmPokemonLab/", "objects/ElmPokemonLab/", "Elm\ Pokemon\ Lab.obj", "ElmPokemonLab.mtl",
                 100, -1, -100, {"x": 0.2, "y": 0.2, "z": 0.2});
@@ -171,11 +148,6 @@
         console.log(ash);
         bulbaBox = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
         bulbaBox.setFromObject(ash);
-        bulba2 = loadOBJ("objects/TestBulba/", "objects/TestBulba/", "Bulba.obj", "Bulba.mtl", 0, 0.4, 5, {"x": 3, "y": 3, "z":3});
-        console.log(bulba2);
-        //bulba2.rotation = (new THREE.Vector3(0,1,0), 180 * Math.PI / 180);
-        //bulbaBox = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
-        bulbaBox = new THREE.Box3().setFromObject(bulba2);
 
         scene.add(ash);
         bulbaHelper = new THREE.BoundingBoxHelper( ash, 0xffffff );
@@ -185,8 +157,6 @@
         addOBJToList(bulbs);
         addOBJToList(pika);
         addOBJToList(house);
-        addOBJToList(house2);
-        addOBJToList(house3);
         addOBJToList(lab);
 
         // wrap all objects in box3
@@ -198,16 +168,16 @@
     }
 
     /**********************************************************
-    * takes the list of objects and adds them to the scene
-    ***********************************************************/
+     * takes the list of objects and adds them to the scene
+     ***********************************************************/
     function addToScene(list){
         for (var i = 0; i < list.length; i++){
             scene.add(list[i]);
         }
     }
     /***********************************************************
-    * Load all the trees that will bound the world.
-    ***********************************************************/
+     * Load all the trees that will bound the world.
+     ***********************************************************/
     function loadTrees(){
 
         // create the boundaries using trees
@@ -247,19 +217,19 @@
     }
 
     /***********************************************************
-    * logs the loading process for each asset
-    ***********************************************************/
+     * logs the loading process for each asset
+     ***********************************************************/
     var onProgress = function ( xhr ) {
         if ( xhr.lengthComputable ) {
             var percentComplete = xhr.loaded / xhr.total * 100;
-           // console.log( Math.round(percentComplete, 2) + '% downloaded' );
+            // console.log( Math.round(percentComplete, 2) + '% downloaded' );
         }
     };
 
     /****************************************
      * This method is not needed at this point, just need to change the way bulba2 is being loaded
      * /
-    /***********************************************************
+     /***********************************************************
      * Load the bulbasaur asset.
      ***********************************************************/
     function loadNewBulba() {
@@ -288,17 +258,17 @@
     }
 
     /***********************************************************
-    * Create an obj and map its textures using the mtl file
-    *
-    * @objBaseURL: file path to where the .obj is located
-    * @mtlBaseURL: file path to where the .mtl is located
-    * @objName:    name of the obj file
-    * @mtlName:    name of the mtl file
-    * @xpos:       x position
-    * @ypos:       y position
-    * @zpos:       z position
-    * @objScale:   map with scale values (x, y, z)
-    ***********************************************************/
+     * Create an obj and map its textures using the mtl file
+     *
+     * @objBaseURL: file path to where the .obj is located
+     * @mtlBaseURL: file path to where the .mtl is located
+     * @objName:    name of the obj file
+     * @mtlName:    name of the mtl file
+     * @xpos:       x position
+     * @ypos:       y position
+     * @zpos:       z position
+     * @objScale:   map with scale values (x, y, z)
+     ***********************************************************/
     function loadOBJ(objBaseURL, mtlBaseURL, objName, mtlName, xpos, ypos, zpos, objScale) {
 
         // set the position to a default of zero if they are not passed in
@@ -344,34 +314,20 @@
 
         // TODO: add collision detection here. If there is a collision, return from the function
         // collision detection, not working currently
-//        for (var i = 0; i < ObjectBoxes.length; i ++){
-//            //console.log(bulbaBox);
-//            //console.log(bulbaBox.intersectsBox(ObjectBoxes[i]));
-//            if ( bulbaBox.intersectsBox(ObjectBoxes[i]) ){
-//                console.log("Contact");
-//                return;
-//            }
-//        }
+        for (var i = 0; i < helperBoxes.length; i ++){
+            //console.log(bulbaBox);
+            //console.log(bulbaBox.intersectsBox(ObjectBoxes[i]));
+            if ( bulbaBox.intersectsBox(ObjectBoxes[i]) ){
+                console.log("Contact");
+                return;
+            }
+        }
         var delta = clock.getDelta();
         var rotateAngle = Math.PI / 2 * delta;
         var speed = 0.5;
 
         if( keyboard.pressed("W") ) {
             ash.translateZ(-speed);
-            bulba2.translateZ(-speed);
-
-            bulbaBox.setFromObject(bulba2);
-            var collision = bulbaBox.intersectsBox(tempPB);
-            //console.log(collision)
-            if(collision){
-                //console.log(collision)
-                bulba2.translateZ(speed);
-                return;
-            }
-//            for (var i = 0; i < ObjectBoxes[i]; i++){
-//                if (bulbaBox.itersectBox(ObjectBoxes[i]))
-//                    bulba2.translateZ(speed);
-//            }
         }
 
         if( keyboard.pressed("S") ) {
@@ -389,8 +345,8 @@
     };
 
     /***********************************************************
-    * Adjusts the camera based on user movement
-    ***********************************************************/
+     * Adjusts the camera based on user movement
+     ***********************************************************/
     function cameraMovement(cube){
 
         // 5 units behind and 3 units above the object
@@ -417,16 +373,16 @@
     // Was going to be a function for collision detection, may not use it anymore.
     function collide(object){
         for (var i = 0; i < box3Array.length; i++){
-           if(object.intersectsBox(box3Array[i]))
-           {
-               console.log("Collision");
-           }
+            if(object.intersectsBox(box3Array[i]))
+            {
+                console.log("Collision");
+            }
         }
     };
 
     /***********************************************************
-    * adds object to the objectList
-    ***********************************************************/
+     * adds object to the objectList
+     ***********************************************************/
     function addOBJToList(currObject){
         objectList.push(currObject);
     }
@@ -435,7 +391,7 @@
      * wrap all the objects in the objectList with a Box3
      ***********************************************************/
     function wrapObjects(objectList){
-        var box = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
+        var box = new THREE.Box3(new THREE.Vector3(0, 3, 0), new THREE.Vector3(0, 3, 0));
 
         for (var i = 0; i < objectList.length; i++){
             box.setFromObject(objectList[i]);

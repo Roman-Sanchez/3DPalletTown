@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b16e715-a1bc-4210-8770-d2db783b4dc4" name="Default" comment="added some collision detection functionality">
+    <list default="true" id="9b16e715-a1bc-4210-8770-d2db783b4dc4" name="Default" comment="Added Flowers&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House1/h_kage_lm1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House1/h_mado_lm1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House1/mt_rdh01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/h_in.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/h_kage_lm1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/h_mado_lm1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/mt_rdh01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/mt_rdh02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House1/Pallet Town House.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House1/Pallet Town House.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/Pallet Town House 2.mtl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objects/House2/Pallet Town House 2.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/flowers.jpg" afterPath="$PROJECT_DIR$/objects/flowers.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template.html" afterPath="$PROJECT_DIR$/template.html" />
     </list>
     <ignored path="CS312.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,28 +40,38 @@
       <file leaf-file-name="template.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29655173">
-              <caret line="331" column="57" selection-start-line="331" selection-start-column="57" selection-end-line="331" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.085299455">
+              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pikachu.mtl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/objects/Pikachu/pikachu.mtl">
+      <file leaf-file-name="PalletTownHouse.fbx" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/x0ynbzqzp8-PalletTown/PalletTown/Fbx Model/PalletTownHouse.fbx">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pikachu.obj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/objects/Pikachu/pikachu.obj">
+      <file leaf-file-name="gabistest.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gabistest.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.0">
+              <caret line="428" column="7" selection-start-line="428" selection-start-column="7" selection-end-line="428" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="three.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/three.js-master/build/three.min.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="379" column="341" selection-start-line="379" selection-start-column="341" selection-end-line="379" selection-end-column="341" />
               <folding />
             </state>
           </provider>
@@ -63,7 +87,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -83,6 +106,7 @@
         <option value="$PROJECT_DIR$/objects/OakLab/Lab.obj" />
         <option value="$PROJECT_DIR$/objects/OakLab/Lab.mtl" />
         <option value="$PROJECT_DIR$/objects/candyTree/candytree.mtl" />
+        <option value="$PROJECT_DIR$/gabistest.html" />
         <option value="$PROJECT_DIR$/template.html" />
       </list>
     </option>
@@ -94,8 +118,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -124,7 +147,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -139,7 +161,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="3DPalletTown" />
+              <option name="myItemId" value="3DPalletTown3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -149,7 +171,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="3DPalletTown" />
+              <option name="myItemId" value="3DPalletTown3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -157,8 +179,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS312" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3DPalletTown3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokeTrainer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,31 +335,19 @@
       <option name="project" value="LOCAL" />
       <updated>1458707127163</updated>
     </task>
-    <task id="LOCAL-00007" summary="refactored much of template to make the code more managable">
-      <created>1459636410435</created>
+    <task id="LOCAL-00007" summary="Added Ash">
+      <created>1459640102952</created>
       <option name="number" value="00007" />
       <option name="project" value="LOCAL" />
-      <updated>1459636410435</updated>
+      <updated>1459640102952</updated>
     </task>
-    <task id="LOCAL-00008" summary="added some collision detection functionality">
-      <created>1459891527688</created>
+    <task id="LOCAL-00008" summary="Added Flowers&#10;">
+      <created>1459888897777</created>
       <option name="number" value="00008" />
       <option name="project" value="LOCAL" />
-      <updated>1459891527688</updated>
+      <updated>1459888897777</updated>
     </task>
-    <task id="LOCAL-00009" summary="added some collision detection functionality">
-      <created>1459891550895</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1459891550895</updated>
-    </task>
-    <task id="LOCAL-00010" summary="added some collision detection functionality">
-      <created>1459891599781</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1459891599781</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -331,26 +360,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21449487" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2143906" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57886434" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57886434" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -371,9 +400,9 @@
     <MESSAGE value="Added the ground to template. It repeats the grass image across the ground" />
     <MESSAGE value="Got a different bulba to get part of the textures to appear" />
     <MESSAGE value="added a lab object and a house object. Create a function that creates and returns an object3D." />
-    <MESSAGE value="refactored much of template to make the code more managable" />
-    <MESSAGE value="added some collision detection functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some collision detection functionality" />
+    <MESSAGE value="Added Ash" />
+    <MESSAGE value="Added Flowers&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Flowers&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -382,13 +411,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Camera.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="178" column="20" selection-start-line="178" selection-start-column="12" selection-end-line="178" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -704,6 +726,20 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/objects/Pikachu/pikachu.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/Pikachu/pikachu.mtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/three.js-master/build/three.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -712,31 +748,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objects/Pikachu/pikachu.obj">
+    <entry file="file://$PROJECT_DIR$/gabistest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-21.0">
+          <caret line="428" column="7" selection-start-line="428" selection-start-column="7" selection-end-line="428" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objects/Bulbasaur/Textures/fushigidane_0_0.tga">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objects/Pikachu/pikachu.mtl">
+    <entry file="file://$USER_HOME$/Downloads/x0ynbzqzp8-PalletTown/PalletTown/Fbx Model/PalletTownHouse.fbx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29655173">
-          <caret line="331" column="57" selection-start-line="331" selection-start-column="57" selection-end-line="331" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.085299455">
+          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
           <folding />
         </state>
       </provider>
