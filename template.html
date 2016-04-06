@@ -33,6 +33,15 @@
     var tempPB;
     var tempPB2;
     var cubeBox;
+    var boxHouse;
+    var boxHouse2;
+    var box3House;
+    var box3House2;
+    var ashBox;
+    var box3Lab;
+    var boxLab;
+    var audio;
+
 
     // Fog
     //scene.fog = new THREE.FogExp2( 0xefd1b5, 0.002 );
@@ -53,6 +62,12 @@
     document.body.appendChild( renderer.domElement );
 
     function init(){
+
+        // load theme music
+        audio = new Audio("objects/theme.mp3");
+        audio.volume = 0.5;
+        audio.play();
+
         console.log("Hello");
         var ambientLight = new THREE.AmbientLight(0x404040);
         scene.add(ambientLight);
@@ -123,6 +138,50 @@
         //flow.position.x = 100;
         scene.add(flow);
 
+        // Back of first house
+        var houseBack = new THREE.ImageUtils.loadTexture('objects/images/woodenWall.jpg');
+        //flower.repeat.set( 1, 1);
+        var wallMaterial = new THREE.MeshBasicMaterial({map: houseBack, side: THREE.DoubleSide});
+        var wallGeo = new THREE.PlaneGeometry(12,8,2,2);
+        var wall = new THREE.Mesh(wallGeo, wallMaterial);
+        houseBack.repeat.set( 1, 1);
+
+        wall.position.x = -50;
+        wall.position.y = 4.5;
+        wall.position.z = -54;
+
+
+        scene.add(wall);
+
+        // Back of first house
+        var labBack = new THREE.ImageUtils.loadTexture('objects/images/labWall.jpg');
+        //flower.repeat.set( 1, 1);
+        var labMaterial = new THREE.MeshBasicMaterial({map: labBack, side: THREE.DoubleSide});
+        var labGeo = new THREE.PlaneGeometry(38,13.5,2,2);
+        var labWall = new THREE.Mesh(labGeo, labMaterial);
+        labBack.wrapS = labBack.wrapT = THREE.MirroredRepeatWrapping;
+        labBack.repeat.set( 1, 3);
+
+        labWall.position.x = 42;
+        labWall.position.y = 4;
+        labWall.position.z = 45.5;
+
+        scene.add(labWall);
+
+        // Back of stairs
+        // Back of first house
+        var stairsBack = new THREE.ImageUtils.loadTexture('objects/images/labWall.jpg');
+        //flower.repeat.set( 1, 1);
+        var stairsMaterial = new THREE.MeshBasicMaterial({map: stairsBack, side: THREE.DoubleSide});
+        var stairsGeo = new THREE.PlaneGeometry(12,8,2,2);
+        var stairs = new THREE.Mesh(stairsGeo, stairsMaterial);
+        stairsBack.repeat.set( 1, 1);
+
+        stairs.position.x = 67;
+        stairs.position.y = 4;
+        stairs.position.z = 45.5;
+
+        scene.add(stairs);
         //camera.lookAt(cube);
         camera.position.z = 5;
         camera.position.y = 1;
@@ -158,9 +217,47 @@
         tempPB = new THREE.Box3().setFromObject(pika);
         tempPB2 = new THREE.Box3().setFromObject(pika);
 
-        house = loadOBJ("objects/House/", "objects/House/", "House.obj", "House.mtl", -50, -0.199, -50, {"x": 0.2, "y": 0.2, "z": 0.2});
+        // box for the first house
+        boxHouse = new THREE.BoxGeometry( 11.5, 1, 8 );
+        var material = new THREE.MeshBasicMaterial( { transparent: true, opacity: 0 } );
+        var cube2 = new THREE.Mesh( boxHouse, material );
+
+        // box for the second house
+        boxHouse2 = new THREE.BoxGeometry( 15, 1, 10 );
+        var material2 = new THREE.MeshBasicMaterial( { transparent: true, opacity: 0 } );
+        var cube3 = new THREE.Mesh( boxHouse2, material2 );
+
+        // box for lab
+        boxLab = new THREE.BoxGeometry( 54, 1, 10 );
+        var material3 = new THREE.MeshBasicMaterial( { transparent: true, opacity: 0 } );
+        var cube4 = new THREE.Mesh( boxLab, material3 );
+
+        // load in the house
+        house = loadOBJ("objects/House/", "objects/House/", "House.obj", "House.mtl", -50, 0, -50, {"x": 0.2, "y": 0.2, "z": 0.2});
         house2 = loadOBJ("objects/House1/", "objects/House1/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", 50, -0.199, -50, {"x": 0.2, "y": 0.2, "z": 0.2});
         house3 = loadOBJ("objects/House/", "objects/House/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", -100, -0.199, -500, {"x": 0.2, "y": 0.2, "z": 0.2});
+
+        cube2.position.x = -50;
+        cube2.position.y = 0.5;
+        cube2.position.z = -50;
+        scene.add(cube2);
+        // create box3 around house
+        box3House = new THREE.Box3().setFromObject(cube2);
+        ObjectBoxes.push(box3House);
+        cube3.position.x = 50;
+        cube3.position.y = 0.5;
+        cube3.position.z = -50;
+        scene.add(cube3);
+        // create box3 around house
+        box3House2 = new THREE.Box3().setFromObject(cube3);
+        ObjectBoxes.push(box3House2);
+
+        cube4.position.x = 50;
+        cube4.position.y = 0.5;
+        cube4.position.z = 50;
+        scene.add(cube4);
+        box3Lab = new THREE.Box3().setFromObject(cube4);
+        ObjectBoxes.push(box3Lab)
 
         lab = loadOBJ("objects/ElmPokemonLab/", "objects/ElmPokemonLab/", "Elm\ Pokemon\ Lab.obj", "ElmPokemonLab.mtl",
                 50, -1, 50, {"x": 0.5, "y": 0.2, "z": 0.2});
@@ -169,8 +266,7 @@
 
 
         console.log(ash);
-        bulbaBox = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
-        bulbaBox.setFromObject(ash);
+        ashBox = new THREE.Box3().setFromObject(ash);
         bulba2 = loadOBJ("objects/TestBulba/", "objects/TestBulba/", "Bulba.obj", "Bulba.mtl", 0, 0.4, 5, {"x": 3, "y": 3, "z":3});
         console.log(bulba2);
         //bulba2.rotation = (new THREE.Vector3(0,1,0), 180 * Math.PI / 180);
@@ -355,18 +451,18 @@
         var delta = clock.getDelta();
         var rotateAngle = Math.PI / 2 * delta;
         var speed = 0.5;
-
+        var collision = false;
         if( keyboard.pressed("W") ) {
             ash.translateZ(-speed);
             bulba2.translateZ(-speed);
 
-            bulbaBox.setFromObject(bulba2);
-            var collision = bulbaBox.intersectsBox(tempPB);
+            ashBox.setFromObject(ash);
+            collision = collide(ObjectBoxes);
             //console.log(collision)
             if(collision || ash.position.z >= 95 || ash.position.z <= -95 || ash.position.x >= 95 || ash.position.x <= -95) {
                 //console.log(collision)
                 ash.translateZ(speed);
-                return;
+                //return;
             }
 //            for (var i = 0; i < ObjectBoxes[i]; i++){
 //                if (bulbaBox.itersectBox(ObjectBoxes[i]))
@@ -376,9 +472,7 @@
 
         if( keyboard.pressed("S") ) {
             ash.translateZ(speed);
-            var collision = bulbaBox.intersectsBox(tempPB);
-            //console.log(collision)
-            if(collision || ash.position.z >= 95 || ash.position.z <= -95 || ash.position.x >= 95 || ash.position.x <= -95) {
+            if(ash.position.z >= 95 || ash.position.z <= -95 || ash.position.x >= 95 || ash.position.x <= -95) {
                 //console.log(collision)
                 ash.translateZ(-speed);
                 return;
@@ -391,7 +485,10 @@
             ash.rotateOnAxis( new THREE.Vector3(0,1,0), rotateAngle);
         if ( keyboard.pressed("D") )
             ash.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
-
+        if (collision)
+        {
+            return;
+        }
         cameraMovement(ash);
     };
 
@@ -422,14 +519,17 @@
     }
 
     // Was going to be a function for collision detection, may not use it anymore.
-    function collide(object){
+    function collide(box3Array){
+        var collision = false;
         for (var i = 0; i < box3Array.length; i++){
-           if(object.intersectsBox(box3Array[i]))
-           {
-               console.log("Collision");
-           }
+
+            if (ashBox.intersectsBox(box3Array[i]))
+            {
+                collision = true;
+            }
         }
-    };
+        return collision
+    }
 
     /***********************************************************
     * adds object to the objectList
@@ -465,8 +565,15 @@
      ***********************************************************/
     var render = function () {
         requestAnimationFrame( render );
-        displayHelper(helperBoxes);
+        //displayHelper(helperBoxes);
         bulbaHelper.update();
+
+        // check if audio is still playing
+        if(audio.ended)
+        {
+            audio.play();
+        }
+
         move();
         renderer.shadowMap.enabled = true;
         renderer.render(scene, camera);
