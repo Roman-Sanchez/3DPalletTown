@@ -25,10 +25,35 @@
     var bulba2;
     var lab;
     var pika;
+    var jig;
+    var char;
+    var squirt;
     var ash;
     var house;
-    var house1;
     var house2;
+    var house3;
+    var fence;
+    var fence2;
+    var fence3;
+    var fence4;
+    var fence5;
+    var flower1;
+    var flower2;
+    var flower3;
+    var flower4;
+    var flower5;
+    var flower6;
+    var flower7;
+    var flower8;
+    var flower9;
+    var flower10;
+    var flower11;
+    var flower12;
+    var flower13;
+    var flower14;
+    var mail1;
+    var mail2;
+    // var fence6;
     var flowers;
     var tempPB;
     var tempPB2;
@@ -70,6 +95,7 @@
 
         console.log("Hello");
         var ambientLight = new THREE.AmbientLight(0x404040);
+        ambientLight.intensity = 4;
         scene.add(ambientLight);
 
         var directionalLight = new THREE.DirectionalLight( 0xffffff, 1.0 );
@@ -210,8 +236,11 @@
         // Build trees
         loadTrees();
 
-        pika = loadOBJ("objects/Pika/", "objects/Pika/", "untitled.obj","untitled.mtl", 9, 0.4, 5, {"x": 0.03, "y": 0.03,"z": 0.03});
-        bulbs = loadOBJ("objects/TestBulba/", "objects/TestBulba/", "Bulba.obj", "Bulba.mtl", 0, 0.4, 5, {"x": 3, "y": 3, "z":3});
+        pika = loadOBJ("objects/Pika/", "objects/Pika/", "untitled.obj","untitled.mtl", 9, 0.4, 5, {"x": 0.02, "y": 0.02,"z": 0.02});
+        bulbs = loadOBJ("objects/Bulbasaur/", "objects/Bulbasaur/", "bulb.obj", "bulb.mtl", 0, 0.4, 25, {"x": 0.006, "y": 0.006, "z":0.006});
+        char = loadOBJ("objects/Charmander/", "objects/Charmander/", "char.obj","char.mtl", 20, 0.4, -50, {"x": 0.4, "y": 0.4,"z": 0.4});
+        jig = loadOBJ("objects/Jigglypuff/", "objects/Jigglypuff/", "jig.obj","jig.mtl", -50, 0.4, 15, {"x": 0.3, "y": 0.3,"z": 0.3});
+        squirt = loadOBJ("objects/Squirtle/", "objects/Squirtle/", "squirt.obj","squirt.mtl", -31, 0.4, 42, {"x": 0.4, "y": 0.4,"z": 0.4});
 
 
         tempPB = new THREE.Box3().setFromObject(pika);
@@ -236,6 +265,28 @@
         house = loadOBJ("objects/House/", "objects/House/", "House.obj", "House.mtl", -50, 0, -50, {"x": 0.2, "y": 0.2, "z": 0.2});
         house2 = loadOBJ("objects/House1/", "objects/House1/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", 50, -0.199, -50, {"x": 0.2, "y": 0.2, "z": 0.2});
         house3 = loadOBJ("objects/House/", "objects/House/", "Pallet\ Town\ House.obj", "Pallet\ Town\ House.mtl", -100, -0.199, -500, {"x": 0.2, "y": 0.2, "z": 0.2});
+        fence = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -20.75 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        fence2 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -27.75 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        fence3 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -24.25, -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        fence4 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -31.25 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        fence5 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -34.75 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        fence6 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -38.25 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        flower1 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -35.25 , -0.199, 40, {"x": 1, "y": 1, "z": 1});
+        flower2 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -30.25 , -0.199, 40, {"x": 1, "y": 1, "z": 1});
+        flower3 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -25.25 , -0.199, 40, {"x": 1, "y": 1, "z": 1});
+        flower4 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 40, {"x": 1, "y": 1, "z": 1});
+        flower5 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -25.25 , -0.199, 43, {"x": 1, "y": 1, "z": 1});
+        flower6 = loadOBJ("objects/Flower/", "objects/Flower/", "fire.obj", "fire.mtl", -30.25 , -0.199, 43, {"x": 0.2, "y": 0.2, "z": 0.2});
+        flower7 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -35.25 , -0.199, 43, {"x": 1, "y": 1, "z": 1});
+        flower8 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 43, {"x": 1, "y": 1, "z": 1});
+        flower9 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 46, {"x": 1, "y": 1, "z": 1});
+        flower10 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -35.25 , -0.199, 46, {"x": 1, "y": 1, "z": 1});
+        flower11 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -30.25 , -0.199, 46, {"x": 1, "y": 1, "z": 1});
+        flower12 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 49, {"x": 1, "y": 1, "z": 1});
+        flower13 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -35.25 , -0.199, 49, {"x": 1, "y": 1, "z": 1});
+        flower14 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 52, {"x": 1, "y": 1, "z": 1});
+        mail1 = loadOBJ("objects/Mailbox/", "objects/Mailbox/", "mail.obj", "mail.mtl", 0, -0.199, 0, {"x": 3, "y": 3, "z": 3});
+        mail2 = loadOBJ("objects/Mailbox/", "objects/Mailbox/", "mail.obj", "mail.mtl", 0, -0.199, 0, {"x": 3, "y": 3, "z": 3});
 
         cube2.position.x = -50;
         cube2.position.y = 0.5;
@@ -275,14 +326,41 @@
 
         scene.add(ash);
         bulbaHelper = new THREE.BoundingBoxHelper( ash, 0xffffff );
+       // bulbaHelper.box.isIntersectionBox(pika.box)
+
         scene.add( bulbaHelper );
 
         // add all the objects created in the init function to the objectList variable
         addOBJToList(bulbs);
         addOBJToList(pika);
+        addOBJToList(jig);
+        addOBJToList(char);
+        addOBJToList(squirt);
         addOBJToList(house);
         addOBJToList(house2);
         addOBJToList(house3);
+        addOBJToList(fence);
+        addOBJToList(fence2);
+        addOBJToList(fence3);
+        addOBJToList(fence4);
+        addOBJToList(fence5);
+        addOBJToList(fence6);
+        addOBJToList(flower1);
+        addOBJToList(flower2);
+        addOBJToList(flower3);
+        addOBJToList(flower4);
+        addOBJToList(flower5);
+        addOBJToList(flower6);
+        addOBJToList(flower7);
+        addOBJToList(flower8);
+        addOBJToList(flower9);
+        addOBJToList(flower10);
+        addOBJToList(flower11);
+        addOBJToList(flower12);
+        addOBJToList(flower13);
+        addOBJToList(flower14);
+        addOBJToList(mail1);
+        addOBJToList(mail2);
         addOBJToList(lab);
 
         // wrap all objects in box3
