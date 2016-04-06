@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd D:\Program Files\Tuts + Premium - Textures Collection\Tuts+ Premium 70 Wood Textures\Wood57.jpg
+map_Kd horizontal.jpg
 
 newmtl poles
 Ns 94.117647
@@ -21,4 +21,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd D:\Program Files\Tuts + Premium - Textures Collection\Tuts+ Premium 70 Wood Textures\Wood23.jpg
+map_Kd fence.jpg

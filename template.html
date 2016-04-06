@@ -37,7 +37,23 @@
     var fence3;
     var fence4;
     var fence5;
-   // var fence6;
+    var flower1;
+    var flower2;
+    var flower3;
+    var flower4;
+    var flower5;
+    var flower6;
+    var flower7;
+    var flower8;
+    var flower9;
+    var flower10;
+    var flower11;
+    var flower12;
+    var flower13;
+    var flower14;
+    var mail1;
+    var mail2;
+    // var fence6;
     var flowers;
     var tempPB;
     var tempPB2;
@@ -118,21 +134,6 @@
         floor.rotation.x = Math.PI / 2;
         scene.add(floor);
 
-        var flower = new THREE.ImageUtils.loadTexture('objects/flowers.jpg');
-        //flower.repeat.set( 1, 1);
-        flower.wrapS = flower.wrapT = THREE.MirroredRepeatWrapping;
-
-        var flowerMaterial = new THREE.MeshBasicMaterial({map: flower, side: THREE.DoubleSide});
-        var flowerGeo = new THREE.PlaneGeometry(25,25,10,10);
-        var flow = new THREE.Mesh(flowerGeo, flowerMaterial);
-        flower.repeat.set( 3, 3);
-        flow.receiveShadow = true;
-        flow.position.y = 0.001;
-        flow.position.x = -30;
-        flow.position.z = 50;
-        flow.rotation.x = Math.PI / 2;
-        scene.add(flow);
-
         //camera.lookAt(cube);
         camera.position.z = 5;
         camera.position.y = 1;
@@ -180,6 +181,22 @@
         fence4 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -31.25 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
         fence5 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -34.75 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
         fence6 = loadOBJ("objects/fence/", "objects/fence/", "fence.obj", "fence.mtl", -38.25 , -0.199, 37, {"x": 1, "y": 1, "z": 1});
+        flower1 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -35.25 , -0.199, 40, {"x": 1, "y": 1, "z": 1});
+        flower2 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -30.25 , -0.199, 40, {"x": 1, "y": 1, "z": 1});
+        flower3 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -25.25 , -0.199, 40, {"x": 1, "y": 1, "z": 1});
+        flower4 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 40, {"x": 1, "y": 1, "z": 1});
+        flower5 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -25.25 , -0.199, 43, {"x": 1, "y": 1, "z": 1});
+        flower6 = loadOBJ("objects/Flower/", "objects/Flower/", "fire.obj", "fire.mtl", -30.25 , -0.199, 43, {"x": 0.2, "y": 0.2, "z": 0.2});
+        flower7 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -35.25 , -0.199, 43, {"x": 1, "y": 1, "z": 1});
+        flower8 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 43, {"x": 1, "y": 1, "z": 1});
+        flower9 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 46, {"x": 1, "y": 1, "z": 1});
+        flower10 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -35.25 , -0.199, 46, {"x": 1, "y": 1, "z": 1});
+        flower11 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -30.25 , -0.199, 46, {"x": 1, "y": 1, "z": 1});
+        flower12 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 49, {"x": 1, "y": 1, "z": 1});
+        flower13 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -35.25 , -0.199, 49, {"x": 1, "y": 1, "z": 1});
+        flower14 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 52, {"x": 1, "y": 1, "z": 1});
+        mail1 = loadOBJ("objects/Mailbox/", "objects/Mailbox/", "mail.obj", "mail.mtl", 0, -0.199, 0, {"x": 3, "y": 3, "z": 3});
+        mail2 = loadOBJ("objects/Mailbox/", "objects/Mailbox/", "mail.obj", "mail.mtl", 0, -0.199, 0, {"x": 3, "y": 3, "z": 3});
 
         lab = loadOBJ("objects/ElmPokemonLab/", "objects/ElmPokemonLab/", "Elm\ Pokemon\ Lab.obj", "ElmPokemonLab.mtl",
                 50, -1, 50, {"x": 0.5, "y": 0.2, "z": 0.2});
@@ -217,6 +234,22 @@
         addOBJToList(fence4);
         addOBJToList(fence5);
         addOBJToList(fence6);
+        addOBJToList(flower1);
+        addOBJToList(flower2);
+        addOBJToList(flower3);
+        addOBJToList(flower4);
+        addOBJToList(flower5);
+        addOBJToList(flower6);
+        addOBJToList(flower7);
+        addOBJToList(flower8);
+        addOBJToList(flower9);
+        addOBJToList(flower10);
+        addOBJToList(flower11);
+        addOBJToList(flower12);
+        addOBJToList(flower13);
+        addOBJToList(flower14);
+        addOBJToList(mail1);
+        addOBJToList(mail2);
         addOBJToList(lab);
 
         // wrap all objects in box3
