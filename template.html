@@ -104,14 +104,14 @@
         scene.add( directionalLight );
 
         // Leaving this here in case I need to reference it later. can be deleted whenever
-         var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-         var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-         var cube = new THREE.Mesh( geometry, material );
-         cube.position.y = 0.5;
-         cube.castShadow = true;
-         cube.receiveShadow = true;
-        cubeBox  = new THREE.Box3().setFromObject(cube);
-         scene.add( cube );
+//         var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+//         var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+//         var cube = new THREE.Mesh( geometry, material );
+//         cube.position.y = 0.5;
+//         cube.castShadow = true;
+//         cube.receiveShadow = true;
+//        cubeBox  = new THREE.Box3().setFromObject(cube);
+//         scene.add( cube );
 
 
         var geometry2 = new THREE.PlaneGeometry(100, 100);
@@ -149,20 +149,20 @@
         floor.rotation.x = Math.PI / 2;
         scene.add(floor);
 
-        var flower = new THREE.ImageUtils.loadTexture('objects/flowers.jpg');
-        //flower.repeat.set( 1, 1);
-        var flowerMaterial = new THREE.MeshBasicMaterial({map: flower, side: THREE.DoubleSide});
-        var flowerGeo = new THREE.PlaneGeometry(10,10,2,2);
-        var flow = new THREE.Mesh(flowerGeo, flowerMaterial);
-        flower.repeat.set( 1, 1);
-        //flow.position.z = 0;
-        flow.position.y = 0.001;
-        flow.position.x = 20;
-        flow.rotation.x = Math.PI / 2;
-       // flow.rotation.z = -100;
-
-        //flow.position.x = 100;
-        scene.add(flow);
+//        var flower = new THREE.ImageUtils.loadTexture('objects/flowers.jpg');
+//        //flower.repeat.set( 1, 1);
+//        var flowerMaterial = new THREE.MeshBasicMaterial({map: flower, side: THREE.DoubleSide});
+//        var flowerGeo = new THREE.PlaneGeometry(10,10,2,2);
+//        var flow = new THREE.Mesh(flowerGeo, flowerMaterial);
+//        flower.repeat.set( 1, 1);
+//        //flow.position.z = 0;
+//        flow.position.y = 0.001;
+//        flow.position.x = 20;
+//        flow.rotation.x = Math.PI / 2;
+//       // flow.rotation.z = -100;
+//
+//        //flow.position.x = 100;
+//        scene.add(flow);
 
         // Back of first house
         var houseBack = new THREE.ImageUtils.loadTexture('objects/images/woodenWall.jpg');
@@ -213,8 +213,8 @@
         camera.position.y = 1;
 
         // Skybox
-        var axes = new THREE.AxisHelper(100);
-        scene.add(axes);
+        //var axes = new THREE.AxisHelper(100);
+        //scene.add(axes);
 
         var urls = ["objects/images/right.png", "objects/images/left.png", "objects/images/top.png",
             "objects/images/bottom.png","objects/images/front.png","objects/images/back.png"];
@@ -325,10 +325,10 @@
         bulbaBox = new THREE.Box3().setFromObject(bulba2);
 
         scene.add(ash);
-        bulbaHelper = new THREE.BoundingBoxHelper( ash, 0xffffff );
+        //bulbaHelper = new THREE.BoundingBoxHelper( ash, 0xffffff );
        // bulbaHelper.box.isIntersectionBox(pika.box)
 
-        scene.add( bulbaHelper );
+        //scene.add( bulbaHelper );
 
         // add all the objects created in the init function to the objectList variable
         addOBJToList(bulbs);
@@ -644,7 +644,7 @@
     var render = function () {
         requestAnimationFrame( render );
         //displayHelper(helperBoxes);
-        bulbaHelper.update();
+        //bulbaHelper.update();
 
         // check if audio is still playing
         if(audio.ended)
