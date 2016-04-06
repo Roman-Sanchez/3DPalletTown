@@ -26,6 +26,8 @@
     var lab;
     var pika;
     var jig;
+    var jigsx = -50;
+    var jigsz = 15;
     var char;
     var squirt;
     var ash;
@@ -53,6 +55,7 @@
     var flower14;
     var mail1;
     var mail2;
+    var chariz;
     // var fence6;
     var flowers;
     var tempPB;
@@ -63,9 +66,59 @@
     var box3House;
     var box3House2;
     var ashBox;
+    var jigBox;
     var box3Lab;
     var boxLab;
     var audio;
+
+    var pikasx = 9;
+    var pikasz = 5;
+    var bulbsx =0;
+    var bulbsz =25;
+    var charx =20;
+    var charz = -50;
+    var squirtx = -31;
+    var squirtz = 42;
+    var housex = -50;
+    var housez = -50;
+    var house2x = 50;
+    var house2z = -50;
+    var house3x = -100;
+    var house3z = -500;
+    var fencesz = 37;
+    var fencesx = -20.75;
+    var fence2sx = -27.75;
+    var fence3sx = -24.25;
+    var fence4sx = -31.25;
+    var fence5sx = -34.75;
+    var fence6sx = -38.25;
+    var flower1to4sz = 40
+    var flower1sx = -35.25;
+    var flower2sx = -30.25;
+    var flower3sx = -25.25;
+    var flower4sx = -40.25;
+    var flowers5to8sz = 43;
+    var flower5x = -25.25;
+    var flower6x = -30.25;
+    var flower7x = -35.25;
+    var flower8x = -40.25;
+    var flower9x = -40.25;
+    var flower9z = 46;
+    var flower10x = -35.25;
+    var flower10z = 46;
+    var flower11x = -30.25;
+    var flower11z = 46;
+    var flower12x = -40.25;
+    var flower12z = 49;
+    var flower13x = -35.25;
+    var flower13z = 49;
+    var flower14sx = -40.25;
+    var flower14sz = 52;
+    var mail1sx = -60;
+    var mail2sx = 38;
+    var mailsz = -46;
+    var charizsx = -25;
+    var charizsz = -142;
 
 
     // Fog
@@ -81,7 +134,6 @@
     var ObjectBoxes = [];
 
     // define renderer
-
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
@@ -243,6 +295,7 @@
         squirt = loadOBJ("objects/Squirtle/", "objects/Squirtle/", "squirt.obj","squirt.mtl", -31, 0.4, 42, {"x": 0.4, "y": 0.4,"z": 0.4});
 
 
+
         tempPB = new THREE.Box3().setFromObject(pika);
         tempPB2 = new THREE.Box3().setFromObject(pika);
 
@@ -285,8 +338,11 @@
         flower12 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 49, {"x": 1, "y": 1, "z": 1});
         flower13 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -35.25 , -0.199, 49, {"x": 1, "y": 1, "z": 1});
         flower14 = loadOBJ("objects/Flower/", "objects/Flower/", "flowers.obj", "flowers.mtl", -40.25 , -0.199, 52, {"x": 1, "y": 1, "z": 1});
-        mail1 = loadOBJ("objects/Mailbox/", "objects/Mailbox/", "mail.obj", "mail.mtl", 0, -0.199, 0, {"x": 3, "y": 3, "z": 3});
-        mail2 = loadOBJ("objects/Mailbox/", "objects/Mailbox/", "mail.obj", "mail.mtl", 0, -0.199, 0, {"x": 3, "y": 3, "z": 3});
+        mail1 = loadOBJ("objects/Mailbox/", "objects/Mailbox/", "mail.obj", "mail.mtl", -60, -0.199, -46, {"x": 0.1, "y": 0.1, "z": 0.1});
+        mail2 = loadOBJ("objects/Mailbox/", "objects/Mailbox/", "mail.obj", "mail.mtl", 38, -0.199, -46, {"x": 0.1, "y": 0.1, "z": 0.1});
+        chariz = loadOBJ("objects/Charizard/", "objects/Charizard/", "chariz.obj", "chariz.mtl", -25, 25, -142, {"x": .25, "y": .25, "z": .25});
+
+
 
         cube2.position.x = -50;
         cube2.position.y = 0.5;
@@ -318,6 +374,7 @@
 
         console.log(ash);
         ashBox = new THREE.Box3().setFromObject(ash);
+        jigBox = new THREE.Box3().setFromObject(jig);
         bulba2 = loadOBJ("objects/TestBulba/", "objects/TestBulba/", "Bulba.obj", "Bulba.mtl", 0, 0.4, 5, {"x": 3, "y": 3, "z":3});
         console.log(bulba2);
         //bulba2.rotation = (new THREE.Vector3(0,1,0), 180 * Math.PI / 180);
@@ -361,7 +418,10 @@
         addOBJToList(flower14);
         addOBJToList(mail1);
         addOBJToList(mail2);
+        addOBJToList(chariz);
         addOBJToList(lab);
+
+
 
         // wrap all objects in box3
         wrapObjects(objectList);
@@ -530,11 +590,236 @@
         var rotateAngle = Math.PI / 2 * delta;
         var speed = 0.5;
         var collision = false;
+        var stop = false;
         if( keyboard.pressed("W") ) {
-            ash.translateZ(-speed);
+               if ((jigsx <= ash.position.x + 3) && (jigsx >= ash.position.x - 3))
+                    {
+                        if ((jigsz <= ash.position.z + 3) && (jigsz >= ash.position.z - 3))
+                        {
+                            stop = true;
+                            //console.log(objectList[i].)
+                            console.log(jigsx);
+                            console.log(ash.position.x);
+                        }
+                    }
+            if ((pikasx <= ash.position.x + 3) && (pikasx >= ash.position.x - 3))
+            {
+                if ((pikasz <= ash.position.z + 3) && (pikasz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((bulbsx <= ash.position.x + 3) && (bulbsx >= ash.position.x - 3))
+            {
+                if ((bulbsz <= ash.position.z + 3) && (bulbsz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((charx <= ash.position.x + 3) && (charx >= ash.position.x - 3))
+            {
+                if ((charz <= ash.position.z + 3) && (charz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+
+            }
+            if ((squirtx <= ash.position.x + 3) && (squirtx >= ash.position.x - 3))
+            {
+                if ((squirtz <= ash.position.z + 3) && (squirtz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((housex <= ash.position.x + 3) && (housex >= ash.position.x - 3))
+            {
+                if ((housez <= ash.position.z + 3) && (housez >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((house2x <= ash.position.x + 3) && (house2x >= ash.position.x - 3))
+            {
+                if ((house2z <= ash.position.z + 3) && (house2z >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((house3x <= ash.position.x + 3) && (house3x >= ash.position.x - 3))
+            {
+                if ((house3z <= ash.position.z + 3) && (house3z >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((fencesx <= ash.position.x + 3) && (fencesx >= ash.position.x - 3))
+            {
+                if ((fencesz <= ash.position.z + 3) && (fencesz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((fence2sx <= ash.position.x + 3) && (fence2sx >= ash.position.x - 3))
+            {
+                if ((fencesz <= ash.position.z + 3) && (fencesz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((fence3sx <= ash.position.x + 3) && (fence3sx >= ash.position.x - 3))
+            {
+                if ((fencesz <= ash.position.z + 3) && (fencesz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((fence4sx <= ash.position.x + 3) && (fence4sx >= ash.position.x - 3))
+            {
+                if ((fencesz <= ash.position.z + 3) && (fencesz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((fence5sx <= ash.position.x + 3) && (fence5sx >= ash.position.x - 3))
+            {
+                if ((fencesz <= ash.position.z + 3) && (fencesz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((fence6sx <= ash.position.x + 3) && (fence6sx >= ash.position.x - 3))
+            {
+                if ((fencesz <= ash.position.z + 3) && (fencesz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((flower1sx <= ash.position.x + 3) && (flower1sx >= ash.position.x - 3))
+            {
+                if ((flower1to4sz <= ash.position.z + 3) && (flower1to4sz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((flower2sx <= ash.position.x + 3) && (flower2sx >= ash.position.x - 3))
+            {
+                if ((flower1to4sz <= ash.position.z + 3) && (flower1to4sz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((flower3sx <= ash.position.x + 3) && (flower3sx >= ash.position.x - 3))
+            {
+                if ((flower1to4sz <= ash.position.z + 3) && (flower1to4sz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((flower4sx <= ash.position.x + 3) && (flower4sx >= ash.position.x - 3))
+            {
+                if ((flower1to4sz <= ash.position.z + 3) && (flower1to4sz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((flower5x <= ash.position.x + 3) && (flower5x >= ash.position.x - 3))
+            {
+                if ((flowers5to8sz <= ash.position.z + 3) && (flowers5to8sz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((flower6x <= ash.position.x + 3) && (flower6x >= ash.position.x - 3))
+            {
+                if ((flowers5to8sz <= ash.position.z + 3) && (flowers5to8sz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((flower7x <= ash.position.x + 3) && (flower7x >= ash.position.x - 3))
+            {
+                if ((flowers5to8sz <= ash.position.z + 3) && (flowers5to8sz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+            if ((flower8x <= ash.position.x + 3) && (flower8x >= ash.position.x - 3))
+            {
+                if ((flowers5to8sz <= ash.position.z + 3) && (flowers5to8sz >= ash.position.z - 3))
+                {
+                    stop = true;
+                    //console.log(objectList[i].)
+                    console.log(jigsx);
+                    console.log(ash.position.x);
+                }
+            }
+
+            if (stop == false) {
+                   ash.translateZ(-speed);
             bulba2.translateZ(-speed);
 
-            ashBox.setFromObject(ash);
+                ashBox.setFromObject(ash);
+                jigBox.setFromObject(jig);
             collision = collide(ObjectBoxes);
             //console.log(collision)
             if(collision || ash.position.z >= 95 || ash.position.z <= -95 || ash.position.x >= 95 || ash.position.x <= -95) {
@@ -546,7 +831,7 @@
 //                if (bulbaBox.itersectBox(ObjectBoxes[i]))
 //                    bulba2.translateZ(speed);
 //            }
-        }
+        }}
 
         if( keyboard.pressed("S") ) {
             ash.translateZ(speed);
@@ -559,9 +844,9 @@
 
         // Create rotations to rotate the cube
 
-        if ( keyboard.pressed("A") )
+        if ( (keyboard.pressed("A")) && (stop == false))
             ash.rotateOnAxis( new THREE.Vector3(0,1,0), rotateAngle);
-        if ( keyboard.pressed("D") )
+        if ( (keyboard.pressed("D")) && (stop == false) )
             ash.rotateOnAxis( new THREE.Vector3(0,1,0), -rotateAngle);
         if (collision)
         {
@@ -623,6 +908,7 @@
         var box = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
 
         for (var i = 0; i < objectList.length; i++){
+            var box = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
             box.setFromObject(objectList[i]);
             ObjectBoxes.push(box);
             bbHelper = new THREE.BoundingBoxHelper( objectList[i], 0xffffff );
@@ -654,6 +940,7 @@
 
         move();
         renderer.shadowMap.enabled = true;
+
         renderer.render(scene, camera);
     };
 
